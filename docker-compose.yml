@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+    traefik:
+        image: traefik:v2.2
+        command: --providers.docker
+        ports:
+            - 8083:80
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+
+    plantuml:
+        image: registry.kher.nl/tlc/plantuml-server:local
+        restart: always
+        environment:
+            PLANTUML_JAVASCRIPT_UNSECURE: 'true'
+        labels:
+            - "traefik.http.routers.uml.rule=PathPrefix(`/plantuml`)"
+
+    nginx:
+        image: 'nginx'
+        restart: always
+        volumes:
+            - ./public:/usr/share/nginx/html:ro
+        labels:
+            - "traefik.http.routers.nginx.rule=PathPrefix(`/`)"
+            - "traefik.http.middlewares.cors.headers.accessControlAllowOriginList=*"
+            - "traefik.http.routers.nginx.middlewares=cors"
+
