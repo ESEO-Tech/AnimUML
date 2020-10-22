@@ -25,6 +25,8 @@
 						<li><input id="showEndNames" type="checkbox"> show connector end names when available</li>
 						<li><input id="showPseudostateInvariants" type="checkbox"> show pseudostates as states on history</li>
 						<li><input id="hideStates" type="checkbox"> hide state invariants on sequence diagram</li>
+						<li><input id="hideSets" type="checkbox"> hide <em>set</em> pseudo-messages on history</li>
+						<li><input id="hideLinks" type="checkbox"> show hyperlinks as normal text</li>
 					</ul>
 				</div>,
 				<a href="javascript:toggle(semanticsDiv, 'inline')">semantics</a><div id="semanticsDiv"
@@ -61,12 +63,18 @@
 						</li>
 					</ul>
 				</div>,
-				<a href="javascript:toggle(toolDiv, 'inline')">external tool</a><div id="toolDiv"
+				<a href="javascript:toggle(toolDiv, 'inline')">analysis tools</a><div id="toolDiv"
 					style="display: none"
 					style="display: inline"
 				>:
 					<ul>
-						<li id="connectToToolLI">Connect to analysis tool: <input id="toolURL" value="ws://127.0.0.1:8090/socket/obp2"/><button id="toolOk">Ok</button>
+						<li><a href="javascript:exploreStateSpace()">Explore state space</a>
+							<ul>
+								<li><div id="explorationsOutput">No output yet</div></li>
+								<li><a href="javascript:stopExploration()">STOP</a></li>
+							</ul>
+						</li>
+						<li id="connectToToolLI">Connect to external analysis tool: <input id="toolURL" value="ws://127.0.0.1:8090/socket/obp2"/><button id="toolOk">Ok</button>
 							<ul>
 								<li>Wait <input id="toolDelay" value="0"/> milliseconds before sending configuration or fireable transitions</li>
 								<li><input id="toolAnimation" type="checkbox"/> animate when driven by analysis tool</li>
@@ -112,31 +120,36 @@
 						}
 					}
 				</script>
-				<a href="javascript:switchDiagrams()">⇄</a>
-				<a id="resetButton" href="javascript:reset()">Reset</a>.
+				<a id="switchDiagram" href="javascript:switchDiagrams()">⇄</a>
+				<a id="resetButton" href="javascript:reset()">Reset</a>
 				<div id="historyExports" style="display: inline">
 					Export
 					<a id="histExport" target="_blank" href="#clickLinkToUpdateIt">model with history</a>
 					(<a id="histExportPretty" target="_blank" href="#clickLinkToUpdateIt">pretty</a>),
-					<a id="seqPlantUML" target="_blank" href="#clickLinkToUpdateIt">PlantUML</a>.
+					<a id="seqPlantUML" target="_blank" href="#clickLinkToUpdateIt">diagram</a>.
 				</div>
-				Show history as a:
-				<select id="historyType">
-					<option>sequence</option>
-					<option>timing</option>
-				</select> diagram
-				<div id="timingScaleDiv">
-					with adjustable scale:
-					<input id="timingScale" type="range" min="20" max="500" value="50"/>
+				<div id="historySettings" style="display: inline;">
+					Show history as a:
+					<select id="historyType">
+						<option>TCSVG sequence</option>
+						<option>sequence</option>
+						<option>timing</option>
+					</select> diagram
+					<div id="timingScaleDiv">
+						with adjustable scale:
+						<input id="timingScale" type="range" min="20" max="500" value="50"/>
+					</div>
 				</div>
 			</div>
 			<object id="seqFigo">
 			</object>
+			<p id="seqFigs"/>
 		</div>
 		<script src="samples/Lamp.js" charset="UTF-8"></script>
 		<script src="samples/ButtonLamp.js" charset="UTF-8"></script>
 		<script src="samples/ButtonLampBulb.js" charset="UTF-8"></script>
 		<script src="samples/ButtonLampBulbWithMethods.js" charset="UTF-8"></script>
+		<script src="samples/LampWithDisablableTimer.js" charset="UTF-8"></script>
 		<script src="ContextualEval.js"></script>
 	</body>
 </html>

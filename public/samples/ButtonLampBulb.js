@@ -1,10 +1,12 @@
-var examples = examples || [];
+globalThis.examples = globalThis.examples || [];
 examples.push(
 	{
 		name: 'ButtonLampBulb',
 		objects: [
 			{
-				name : 'Button',
+				name: 'button',
+				class: 'Button',
+				isActor: true,
 				stateByName: {
 					init: {
 						type: 'Pseudostate',
@@ -29,7 +31,8 @@ examples.push(
 				},
 			},
 			{
-				name: 'Lamp',
+				name: 'lamp',
+				class: 'Lamp',
 				stateByName: {
 					init: {
 						type: 'Pseudostate',
@@ -60,9 +63,14 @@ examples.push(
 						effect: 'turnOff()',
 					},
 				},
+				operationByName: {
+					onButton: {},
+					offButton: {},
+				},
 			},
 			{
-				name: 'Bulb',
+				name: 'bulb',
+				class: 'Bulb',
 				operationByName: {
 					turnOn: {
 					},
@@ -73,13 +81,13 @@ examples.push(
 		],
 		connectorByName: {
 			C1: {
-				ends: ["Button", "Lamp"],
+				ends: ["button", "lamp"],
 				possibleMessages: {
 					forward: ["onButton", "offButton"],
 				},
 			},
 			C2: {
-				ends: ["Lamp", "Bulb"],
+				ends: ["lamp", "bulb"],
 				possibleMessages: {
 					forward: ["turnOn", "turnOff"],
 				},

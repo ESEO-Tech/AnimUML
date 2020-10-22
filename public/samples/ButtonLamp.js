@@ -4,7 +4,9 @@ examples.push(
 		name: 'ButtonLamp',
 		objects: [
 			{
-				name : 'Button',
+				name: 'button',
+				class: 'Button',
+				isActor: true,
 				stateByName: {
 					init: {
 						type: 'Pseudostate',
@@ -29,7 +31,8 @@ examples.push(
 				},
 			},
 			{
-				name: 'Lamp',
+				name: 'lamp',
+				class: 'Lamp',
 				stateByName: {
 					init: {
 						type: 'Pseudostate',
@@ -64,10 +67,15 @@ examples.push(
 		],
 		connectorByName: {
 			C1: {
-				ends: ["Button", "Lamp"],
+				ends: ["button", "lamp"],
 				possibleMessages: {
 					forward: ["onButton", "offButton"],
 				},
+			},
+		},
+		settings: {
+			"defaultToolValues": {
+				"VERIFY_LTL_PROPERTY.property": "lampOn = [] (|EP_CONTAINS(lamp, onButton)| -> (<>|IS_IN_STATE(lamp, lamp.On)|))",
 			},
 		},
 	}

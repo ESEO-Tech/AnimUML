@@ -5,7 +5,7 @@ This repository contains a runnable version of AnimUML, a web-based UML animatio
 You can also try AnimUML without downloading or installing anything at: https://animuml.kher.nl/
 
 AnimUML has been presented in the following research paper:
-```
+```bibtex
 @inproceedings{AnimUML,
 	title = {{Designing, Animating, and Verifying Partial UML Models}},
 	author = {Fr{\'{e}}d{\'{e}}ric Jouault and Valentin Besnard and Th{\'{e}}o {Le Calvar} and Ciprian Teodorov and Matthias Brun and J{\'{e}}r{\^{o}}me Delatour},
@@ -45,4 +45,10 @@ The `:<port>` part is optional if you opted to use the default HTTP port (i.e., 
 	- can be installed with apt on Debian-derived distributions.
 
 Other dependencies will be downloaded automatically when running docker-compose for the first time. An internet connection is therefore required for the first launch.
+
+### Included third-party libraries
+
+- https://nodeca.github.io/pako/
+- https://github.com/slightlyoff/cassowary.js
+- param.js from https://www.w3.org/TR/SVGParamPrimer/
 

@@ -1,7 +1,7 @@
 globalThis.examples = globalThis.examples || [];
 examples.push(
 	{
-		name: "Lamp",
+		name: "LampWithDisablableTimer",
 		objects: [
 			{
 				name: 'lamp',
@@ -10,6 +10,10 @@ examples.push(
 					init: {
 						type: 'Pseudostate',
 						kind: 'initial',
+					},
+					choice: {
+						type: 'Pseudostate',
+						kind: 'choice',
 					},
 				},
 				transitionByName: {
@@ -31,9 +35,19 @@ examples.push(
 					},
 					T1: {
 						source: 'On',
-						target: 'Off',
+						target: 'choice',
 						trigger: 'after(10min)',
+					},
+					T2: {
+						source: 'choice',
+						target: 'Off',
+						guard: 'timerDisabled',
 						effect: 'turnOff()',
+					},
+					T3: {
+						source: 'choice',
+						target: 'On',
+						guard: 'else',
 					},
 				},
 				operationByName: {
