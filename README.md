@@ -2,18 +2,26 @@
 
 This repository contains a runnable version of AnimUML, a web-based UML animation tool.
 
-You can also try AnimUML without downloading or installing anything at: https://animuml.kher.nl/
+You can also try AnimUML without downloading or installing anything by following one of these links:
+* https://animuml.kher.nl/ (without support for remote engines or external tools)
+* https://animuml.obpcdl.org/ (with support for the [OBP2](http://www.obpcdl.org/) external tool)
 
-AnimUML has been presented in the following research paper:
+AnimUML has been presented ([interactive slides](https://animuml.kher.nl/slides/MODELS2020.html)) in the following research paper:
 ```bibtex
 @inproceedings{AnimUML,
 	title = {{Designing, Animating, and Verifying Partial UML Models}},
 	author = {Fr{\'{e}}d{\'{e}}ric Jouault and Valentin Besnard and Th{\'{e}}o {Le Calvar} and Ciprian Teodorov and Matthias Brun and J{\'{e}}r{\^{o}}me Delatour},
 	booktitle = {Proceedings of the 23rd ACM / IEEE International Conference on Model Driven Engineering Languages and Systems (MODELS 2020)},
-	address   = {Montreal, Canada},
 	month = oct,
 	year = 2020,
-	note = {To appear},
+	isbn = {9781450370196},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	doi = {10.1145/3365438.3410967},
+	pages = {211–217},
+	numpages = {7},
+	location = {Virtual Event, Canada},
+	series = {MODELS '20}
 }
 ```
 
