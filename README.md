@@ -2,10 +2,9 @@
 
 This repository contains a runnable version of AnimUML, a web-based UML animation tool.
 
-You can also try AnimUML without downloading or installing anything by following one of these links:
-* https://animuml.kher.nl/ (without support for remote engines or external tools)
-* https://animuml.obpcdl.org/ (with support for the [OBP2](http://www.obpcdl.org/) external tool)
-
+You can also try the latest AnimUML version (v20221216) without downloading or installing anything using the following link: https://animumlv20221216.kher.nl/.
+Note that this server does not host any remote engine or external tool.
+Other AnimUML versions are listed on the [Deployed Installations](https://github.com/ESEO-Tech/AnimUML/wiki/Deployed-Installations) wiki page.
 
 AnimUML has been presented ([interactive slides](https://animuml.kher.nl/slides/MODELS2020.html)) in the following research paper:
 ```bibtex
@@ -26,7 +25,7 @@ AnimUML has been presented ([interactive slides](https://animuml.kher.nl/slides/
 	series = {MODELS '20}
 }
 ```
-Only a few sample models are currently built-in AnimUML, but other models can be found in separate locations (see [Finding Models](/ESEO-Tech/AnimUML/wiki/Finding-Models) on this project's wiki).
+Only a few sample models are currently built-in AnimUML, but other models can be found in separate locations (see [Finding Models](https://github.com/ESEO-Tech/AnimUML/wiki/Finding-Models) on this project's wiki).
 
 
 ### How to use on your machine
@@ -44,6 +43,7 @@ git clone https://github.com/ESEO-Tech/AnimUML.git
 ```
 - Open `http://localhost:<port>/` in your browser (tested with Chrome and Firefox).
 The `:<port>` part is optional if you opted to use the default HTTP port (i.e., 80).
+
 
 ### Dependencies
 
