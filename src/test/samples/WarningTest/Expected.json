@@ -1,0 +1,1488 @@
+{
+  "samples/AnimUMLEngine.js": {
+    "errors": [],
+    "warnings": [
+      "No type is specified for connector C1 between engine and tool."
+    ]
+  },
+  "samples/AscenseurArchitectureCandidate.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for actor Utilisateur.",
+      "No class is specified for actor Ascenseur.",
+      "No class is specified for object E_boutonÉtage[].",
+      "No class is specified for object étages.",
+      "No class is specified for object spirou.",
+      "No class is specified for object cabine.",
+      "No class is specified for object E_Moteur.",
+      "No class is specified for object E_cabine.",
+      "Could not find operation appelerAscenseur on E_boutonÉtage[] corresponding to message appelerAscenseur(étage) sent on connector C1 from Utilisateur.",
+      "Could not find operation demandeEnregistre on Utilisateur corresponding to message demandeEnregistre(étage) sent on connector C1 from E_boutonÉtage[].",
+      "Could not find operation arrivéeAscenseur on Utilisateur corresponding to message arrivéeAscenseur(étage) sent on connector C1 from E_boutonÉtage[].",
+      "Could not find operation étageDesservi on Utilisateur corresponding to message étageDesservi(étage) sent on connector C1 from E_boutonÉtage[].",
+      "No type is specified for connector C1 between Utilisateur and E_boutonÉtage[].",
+      "Could not find operation appuyer on étages corresponding to message appuyer(étage) sent on connector C2_1 from E_boutonÉtage[].",
+      "Could not find operation clignoter on E_boutonÉtage[] corresponding to message clignoter() sent on connector C2_1 from étages.",
+      "Could not find operation allumer on E_boutonÉtage[] corresponding to message allumer() sent on connector C2_1 from étages.",
+      "Could not find operation éteindre on E_boutonÉtage[] corresponding to message éteindre() sent on connector C2_1 from étages.",
+      "No type is specified for connector C2_1 between E_boutonÉtage[] and étages.",
+      "Could not find operation demander on spirou corresponding to message demander(étage) sent on connector C2_2 from étages.",
+      "Could not find operation accorder on étages corresponding to message accorder(étage) sent on connector C2_2 from spirou.",
+      "Could not find operation servi on étages corresponding to message servi(étage) sent on connector C2_2 from spirou.",
+      "No type is specified for connector C2_2 between étages and spirou.",
+      "Could not find operation aller on cabine corresponding to message aller(étage) sent on connector C2_3 from spirou.",
+      "Could not find operation cabLibre on spirou corresponding to message cabLibre() sent on connector C2_3 from cabine.",
+      "Could not find operation demander on spirou corresponding to message demander(étage) sent on connector C2_3 from cabine.",
+      "No type is specified for connector C2_3 between spirou and cabine.",
+      "Could not find operation monter on E_Moteur corresponding to message monter() sent on connector C3 from cabine.",
+      "Could not find operation descendre on E_Moteur corresponding to message descendre() sent on connector C3 from cabine.",
+      "Could not find operation stopper on E_Moteur corresponding to message stopper() sent on connector C3 from cabine.",
+      "No type is specified for connector C3 between cabine and E_Moteur.",
+      "Could not find operation déplacerCabine on Ascenseur corresponding to message déplacerCabine(étage) sent on connector C4 from E_Moteur.",
+      "No type is specified for connector C4 between E_Moteur and Ascenseur.",
+      "Could not find operation allumerLed on E_cabine corresponding to message allumerLed(étage) sent on connector C5 from cabine.",
+      "Could not find operation éteindreLed on E_cabine corresponding to message éteindreLed(étage) sent on connector C5 from cabine.",
+      "Could not find operation clignoterLed on E_cabine corresponding to message clignoterLed(étage) sent on connector C5 from cabine.",
+      "Could not find operation voyagerVers on cabine corresponding to message voyagerVers(étage) sent on connector C5 from E_cabine.",
+      "Could not find operation étageAtteint on cabine corresponding to message étageAtteint(étage) sent on connector C5 from E_cabine.",
+      "No type is specified for connector C5 between cabine and E_cabine.",
+      "Could not find operation afficherDestination on Utilisateur corresponding to message afficherDestination(étage) sent on connector C6 from E_cabine.",
+      "Could not find operation afficherCourant on Utilisateur corresponding to message afficherCourant(étage) sent on connector C6 from E_cabine.",
+      "Could not find operation demanderÉtage on E_cabine corresponding to message demanderÉtage(étage) sent on connector C6 from Utilisateur.",
+      "No type is specified for connector C6 between E_cabine and Utilisateur.",
+      "Could not find operation cabinePasseÉtage on E_cabine corresponding to message cabinePasseÉtage(étage) sent on connector C7 from Ascenseur.",
+      "No type is specified for connector C7 between E_cabine and Ascenseur."
+    ]
+  },
+  "samples/AscenseurContexte.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for actor Utilisateur.",
+      "No class is specified for actor Ascenseur.",
+      "No class is specified for object E_boutonÉtage[].",
+      "No class is specified for object SàÉ.",
+      "No class is specified for object E_Moteur.",
+      "No class is specified for object E_cabine.",
+      "Could not find operation appelerAscenseur on E_boutonÉtage[] corresponding to message appelerAscenseur(étage) sent on connector C1 from Utilisateur.",
+      "Could not find operation demandeEnregistre on Utilisateur corresponding to message demandeEnregistre(étage) sent on connector C1 from E_boutonÉtage[].",
+      "Could not find operation arrivéeAscenseur on Utilisateur corresponding to message arrivéeAscenseur(étage) sent on connector C1 from E_boutonÉtage[].",
+      "Could not find operation étageDesservi on Utilisateur corresponding to message étageDesservi(étage) sent on connector C1 from E_boutonÉtage[].",
+      "No type is specified for connector C1 between Utilisateur and E_boutonÉtage[].",
+      "Could not find operation appuyer on SàÉ corresponding to message appuyer(étage) sent on connector C2 from E_boutonÉtage[].",
+      "Could not find operation clignoter on E_boutonÉtage[] corresponding to message clignoter() sent on connector C2 from SàÉ.",
+      "Could not find operation allumer on E_boutonÉtage[] corresponding to message allumer() sent on connector C2 from SàÉ.",
+      "Could not find operation éteindre on E_boutonÉtage[] corresponding to message éteindre() sent on connector C2 from SàÉ.",
+      "No type is specified for connector C2 between E_boutonÉtage[] and SàÉ.",
+      "Could not find operation monter on E_Moteur corresponding to message monter() sent on connector C3 from SàÉ.",
+      "Could not find operation descendre on E_Moteur corresponding to message descendre() sent on connector C3 from SàÉ.",
+      "Could not find operation stopper on E_Moteur corresponding to message stopper() sent on connector C3 from SàÉ.",
+      "No type is specified for connector C3 between SàÉ and E_Moteur.",
+      "Could not find operation déplacerCabine on Ascenseur corresponding to message déplacerCabine(étage) sent on connector C4 from E_Moteur.",
+      "No type is specified for connector C4 between E_Moteur and Ascenseur.",
+      "Could not find operation allumerLed on E_cabine corresponding to message allumerLed(étage) sent on connector C5 from SàÉ.",
+      "Could not find operation éteindreLed on E_cabine corresponding to message éteindreLed(étage) sent on connector C5 from SàÉ.",
+      "Could not find operation clignoterLed on E_cabine corresponding to message clignoterLed(étage) sent on connector C5 from SàÉ.",
+      "Could not find operation voyagerVers on SàÉ corresponding to message voyagerVers(étage) sent on connector C5 from E_cabine.",
+      "Could not find operation étageAtteint on SàÉ corresponding to message étageAtteint(étage) sent on connector C5 from E_cabine.",
+      "No type is specified for connector C5 between SàÉ and E_cabine.",
+      "Could not find operation afficherDestination on Utilisateur corresponding to message afficherDestination(étage) sent on connector C6 from E_cabine.",
+      "Could not find operation afficherCourant on Utilisateur corresponding to message afficherCourant(étage) sent on connector C6 from E_cabine.",
+      "Could not find operation demanderÉtage on E_cabine corresponding to message demanderÉtage(étage) sent on connector C6 from Utilisateur.",
+      "No type is specified for connector C6 between E_cabine and Utilisateur.",
+      "Could not find operation cabinePasseÉtage on E_cabine corresponding to message cabinePasseÉtage(étage) sent on connector C7 from Ascenseur.",
+      "No type is specified for connector C7 between E_cabine and Ascenseur."
+    ]
+  },
+  "samples/BCabine.js": {
+    "errors": [],
+    "warnings": [
+      "Class B_Cabine of object bCabine not found."
+    ]
+  },
+  "samples/BoutonLampe.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object Bouton.",
+      "No class is specified for object Lampe.",
+      "Could not find operation boutON on Lampe that appears as trigger in its state machine.",
+      "Could not find operation boutOFF on Lampe that appears as trigger in its state machine."
+    ]
+  },
+  "samples/BoutonLampeAmpoule.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object Bouton.",
+      "No class is specified for object Lampe.",
+      "No class is specified for object Ampoule.",
+      "Could not find operation boutON on Lampe that appears as trigger in its state machine.",
+      "Could not find operation boutOFF on Lampe that appears as trigger in its state machine.",
+      "Could not find operation allumer on Ampoule that appears as trigger in its state machine.",
+      "Could not find operation eteindre on Ampoule that appears as trigger in its state machine."
+    ]
+  },
+  "samples/BoutonLampeAmpoulePassive.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object Ampoule.",
+      "No class is specified for object Bouton.",
+      "No class is specified for object Lampe.",
+      "Could not find operation boutON on Lampe that appears as trigger in its state machine.",
+      "Could not find operation boutOFF on Lampe that appears as trigger in its state machine."
+    ]
+  },
+  "samples/Bridge.js": {
+    "errors": [],
+    "warnings": [
+      "Class Torch of object torch not found.",
+      "No type is specified for connector C1 between viking1 and torch.",
+      "No type is specified for connector C2 between viking2 and torch.",
+      "No type is specified for connector C3 between torch and viking3.",
+      "No type is specified for connector C4 between torch and viking4."
+    ]
+  },
+  "samples/BridgeWithExplicitDBM.js": {
+    "errors": [],
+    "warnings": [
+      "Class Soldier of object viking1 not found.",
+      "Class Soldier of object viking2 not found.",
+      "Class Soldier of object viking3 not found.",
+      "Class Soldier of object viking4 not found.",
+      "Class Torch of object torch not found.",
+      "No class is specified for object dbm.",
+      "No type is specified for connector C1 between viking1 and torch.",
+      "No type is specified for connector C2 between viking2 and torch.",
+      "No type is specified for connector C3 between torch and viking3.",
+      "No type is specified for connector C4 between torch and viking4."
+    ]
+  },
+  "samples/BridgeWithExplicitDBMTests.js": {
+    "errors": [],
+    "warnings": [
+      "Class Soldier of object viking1 not found.",
+      "Class Soldier of object viking2 not found.",
+      "Class Soldier of object viking3 not found.",
+      "Class Soldier of object viking4 not found.",
+      "Class Torch of object torch not found.",
+      "No class is specified for object dbm.",
+      "No type is specified for connector C1 between viking1 and torch.",
+      "No type is specified for connector C2 between viking2 and torch.",
+      "No type is specified for connector C3 between torch and viking3.",
+      "No type is specified for connector C4 between torch and viking4."
+    ]
+  },
+  "samples/ButtonLamp.js": {
+    "errors": [],
+    "warnings": [
+      "Class Button of actor button not found.",
+      "Class Lamp of object lamp not found.",
+      "Could not find operation onButton on lamp that appears as trigger in its state machine.",
+      "Could not find operation offButton on lamp that appears as trigger in its state machine.",
+      "Could not find operation onButton on lamp corresponding to message onButton sent on connector C1 from button.",
+      "Could not find operation offButton on lamp corresponding to message offButton sent on connector C1 from button.",
+      "No type is specified for connector C1 between button and lamp.",
+      "Could not find operation onButton on lamp that appears as message in interaction \"turnOn\".",
+      "Could not find operation offButton on lamp that appears as message in interaction \"turnOff\"."
+    ]
+  },
+  "samples/ButtonLampBulb.js": {
+    "errors": [],
+    "warnings": [
+      "Class Button of actor button not found.",
+      "Class Lamp of object lamp not found.",
+      "Class Bulb of object bulb not found.",
+      "No type is specified for connector C1 between button and lamp.",
+      "No type is specified for connector C2 between lamp and bulb."
+    ]
+  },
+  "samples/ButtonLampBulbExplicitTargets.js": {
+    "errors": [],
+    "warnings": [
+      "Class Button of actor button not found.",
+      "Class Lamp of object lamp not found.",
+      "Class Bulb of object bulb not found.",
+      "No type is specified for connector C1 between button and lamp.",
+      "No type is specified for connector C2 between lamp and bulb."
+    ]
+  },
+  "samples/ButtonLampBulbWithMethods.js": {
+    "errors": [],
+    "warnings": [
+      "Class Button of actor button not found.",
+      "Class Lamp of object lamp not found.",
+      "Class Bulb of object bulb not found.",
+      "Could not find operation onButton on lamp that appears as trigger in its state machine.",
+      "Could not find operation offButton on lamp that appears as trigger in its state machine.",
+      "Could not find operation onButton on lamp corresponding to message onButton sent on connector C1 from button.",
+      "Could not find operation offButton on lamp corresponding to message offButton sent on connector C1 from button.",
+      "No type is specified for connector C1 between button and lamp.",
+      "No type is specified for connector C2 between lamp and bulb."
+    ]
+  },
+  "samples/ButtonLampExplicitTargets.js": {
+    "errors": [],
+    "warnings": [
+      "Class Button of actor button not found.",
+      "Class Lamp of object lamp not found.",
+      "Could not find operation onButton on lamp that appears as trigger in its state machine.",
+      "Could not find operation offButton on lamp that appears as trigger in its state machine.",
+      "Could not find operation onButton on lamp corresponding to message onButton sent on connector C1 from button.",
+      "Could not find operation offButton on lamp corresponding to message offButton sent on connector C1 from button.",
+      "No type is specified for connector C1 between button and lamp."
+    ]
+  },
+  "samples/EMI/AliceBob1.js": {
+    "errors": [],
+    "warnings": [
+      "Class Alice of object alice not found.",
+      "Class Bob of object bob not found.",
+      "No type is specified for connector c between bob and alice."
+    ]
+  },
+  "samples/EMI/AliceBob2.js": {
+    "errors": [],
+    "warnings": [
+      "Class Alice of object alice not found.",
+      "Class Bob of object bob not found.",
+      "Class DataManager of object dataManager not found.",
+      "No type is specified for connector c1 between bob and alice.",
+      "No type is specified for connector c2 between dataManager and alice.",
+      "No type is specified for connector c3 between dataManager and bob."
+    ]
+  },
+  "samples/EMI/AliceBobPeterson.js": {
+    "errors": [],
+    "warnings": [
+      "Class Alice of object alice not found.",
+      "Class Bob of object bob not found.",
+      "Class DataManager of object dataManager not found.",
+      "No type is specified for connector c1 between bob and alice.",
+      "No type is specified for connector c2 between dataManager and alice.",
+      "No type is specified for connector c3 between dataManager and bob."
+    ]
+  },
+  "samples/EMI/AtmUser.js": {
+    "errors": [],
+    "warnings": [
+      "Class Bank of object bank not found.",
+      "Class ATM of object atm not found.",
+      "Class User of object user not found.",
+      "Operation verifyPIN on bank has 2 parameters, but trigger verifyPIN has 0 argument(s).",
+      "Operation enterCard on atm has 1 parameters, but trigger enterCard has 0 argument(s).",
+      "Operation enterPIN on atm has 1 parameters, but trigger enterPIN has 0 argument(s).",
+      "No type is specified for connector connector_bank_atm between bank and atm.",
+      "No type is specified for connector connector_user_atm between atm and user."
+    ]
+  },
+  "samples/EMI/CONC_EB1_archiCandidate.js": {
+    "errors": [],
+    "warnings": [
+      "Class GUI of object gui not found.",
+      "Class PowerSupply of object powerSupply not found.",
+      "Class Network of object network not found.",
+      "Class LandingSetManager of object landingSetManager not found.",
+      "Class ErrorManager of object errorManager not found.",
+      "Class LandingSet of object frontLandingSet not found.",
+      "Class LandingSet of object backRightLandingSet not found.",
+      "Class LandingSet of object backLeftLandingSet not found.",
+      "Class Door of object frontDoor not found.",
+      "Class Door of object backRightDoor not found.",
+      "Class Door of object backLeftDoor not found.",
+      "Class LandingGear of object frontLandingGear not found.",
+      "Class LandingGear of object backRightLandingGear not found.",
+      "Class LandingGear of object backLeftLandingGear not found.",
+      "Class E_Handle of object handle not found.",
+      "No type is specified for connector c1 between gui and errorManager.",
+      "No type is specified for connector c2 between gui and network.",
+      "No type is specified for connector c3 between gui and landingSetManager.",
+      "No type is specified for connector c4 between powerSupply and landingSetManager.",
+      "No type is specified for connector c5 between landingSetManager and errorManager.",
+      "No type is specified for connector c6 between landingSetManager and frontLandingSet.",
+      "No type is specified for connector c7 between landingSetManager and backRightLandingSet.",
+      "No type is specified for connector c8 between landingSetManager and backLeftLandingSet.",
+      "No type is specified for connector c9 between frontLandingSet and frontDoor.",
+      "No type is specified for connector c10 between frontLandingSet and frontLandingGear.",
+      "No type is specified for connector c11 between backRightLandingSet and backRightDoor.",
+      "No type is specified for connector c12 between backRightLandingSet and backRightLandingGear.",
+      "No type is specified for connector c13 between backLeftLandingSet and backLeftDoor.",
+      "No type is specified for connector c14 between backLeftLandingSet and backLeftLandingGear.",
+      "No type is specified for connector c15 between handle and landingSetManager."
+    ]
+  },
+  "samples/EMI/ChallengeMain.js": {
+    "errors": [],
+    "warnings": [
+      "Class Controller of object system_System_controller not found.",
+      "Class TrajectoryManager of object system_System_trajectoryManager not found.",
+      "Class ControllerToPlayerPortSys of object system_System_controllerToPlayerPortSys not found.",
+      "Class ControllerToRefereePortSys of object system_System_controllerToRefereePortSys not found.",
+      "Class TrajToPlayerPortSys of object system_System_trajToPlayerPortSys not found.",
+      "Class TrajToRefereePortSys of object system_System_trajToRefereePortSys not found.",
+      "Class CommunicationPlayer of object environment_Environment_player not found.",
+      "Class CommunicationReferee of object environment_Environment_referee not found.",
+      "Class ControllerToPlayerPortEnv of object environment_Environment_controllerToPlayerPortEnv not found.",
+      "Class ControllerToRefereePortEnv of object environment_Environment_controllerToRefereePortEnv not found.",
+      "Class TrajToPlayerPortEnv of object environment_Environment_trajToPlayerPortEnv not found.",
+      "Class TrajToRefereePortEnv of object environment_Environment_trajToRefereePortEnv not found.",
+      "No class is specified for object system_controllerToPlayerPortSys.",
+      "No class is specified for object environment_controllerToPlayerPortEnv.",
+      "No class is specified for object system_controllerToRefereePortSys.",
+      "No class is specified for object environment_controllerToRefereePortEnv.",
+      "No class is specified for object system_trajToPlayerPortSys.",
+      "No class is specified for object environment_trajToPlayerPortEnv.",
+      "No class is specified for object system_trajToRefereePortSys.",
+      "No class is specified for object environment_trajToRefereePortEnv.",
+      "No class is specified for object system_controller.",
+      "No class is specified for object system_trajectoryManager.",
+      "No class is specified for object environment_player.",
+      "No class is specified for object environment_referee.",
+      "Operation goPos on system_System_trajectoryManager has 3 parameters, but trigger goPos has 0 argument(s).",
+      "Operation goAngle on system_System_trajectoryManager has 3 parameters, but trigger goAngle has 0 argument(s).",
+      "Operation rspPlayerGPS on system_System_trajectoryManager has 2 parameters, but trigger rspPlayerGPS has 0 argument(s).",
+      "Operation rspBallGPS on system_System_trajectoryManager has 2 parameters, but trigger rspBallGPS has 0 argument(s).",
+      "Operation rspCompass on system_System_trajectoryManager has 1 parameters, but trigger rspCompass has 0 argument(s).",
+      "Operation moveForward on environment_Environment_player has 1 parameters, but trigger moveForward has 0 argument(s).",
+      "Operation moveRight on environment_Environment_player has 1 parameters, but trigger moveRight has 0 argument(s).",
+      "Operation spin on environment_Environment_player has 2 parameters, but trigger spin has 0 argument(s).",
+      "Operation setSuction on environment_Environment_player has 1 parameters, but trigger setSuction has 0 argument(s).",
+      "No type is specified for connector c1 between system_controllerToPlayerPortSys and environment_controllerToPlayerPortEnv.",
+      "No type is specified for connector c2 between system_controllerToRefereePortSys and environment_controllerToRefereePortEnv.",
+      "No type is specified for connector c3 between system_trajToPlayerPortSys and environment_trajToPlayerPortEnv.",
+      "No type is specified for connector c4 between system_trajToRefereePortSys and environment_trajToRefereePortEnv.",
+      "No type is specified for connector system_c1 between system_controller and system_trajectoryManager.",
+      "No type is specified for connector system_c2 between system_controller and system_controllerToPlayerPortSys.",
+      "No type is specified for connector system_c3 between system_controller and system_controllerToRefereePortSys.",
+      "No type is specified for connector system_c4 between system_trajectoryManager and system_trajToPlayerPortSys.",
+      "No type is specified for connector system_c5 between system_trajectoryManager and system_trajToRefereePortSys.",
+      "No type is specified for connector environment_c1 between environment_player and environment_controllerToPlayerPortEnv.",
+      "No type is specified for connector environment_c2 between environment_referee and environment_controllerToRefereePortEnv.",
+      "No type is specified for connector environment_c3 between environment_player and environment_trajToPlayerPortEnv.",
+      "No type is specified for connector environment_c4 between environment_referee and environment_trajToRefereePortEnv."
+    ]
+  },
+  "samples/EMI/CruiseControl1.js": {
+    "errors": [],
+    "warnings": [
+      "Class Driver of object driverComposite not found.",
+      "Class SpeedManager of object speedManagerComposite not found.",
+      "Class CruiseSpeedManager of object cruiseSpeedManagerComposite not found.",
+      "Class Car of object carComposite not found.",
+      "Class Controller of object controllerComposite not found.",
+      "Class DataManager of object dataManagerComposite not found.",
+      "Operation changeSpeed on carComposite has 1 parameters, but trigger changeSpeed has 0 argument(s).",
+      "Operation set on controllerComposite has 1 parameters, but trigger set has 0 argument(s).",
+      "Operation set on controllerComposite has 1 parameters, but trigger set has 0 argument(s).",
+      "Operation set on controllerComposite has 1 parameters, but trigger set has 0 argument(s).",
+      "No type is specified for connector c1 between controllerComposite and speedManagerComposite.",
+      "No type is specified for connector c2 between controllerComposite and cruiseSpeedManagerComposite.",
+      "No type is specified for connector c3 between driverComposite and controllerComposite.",
+      "No type is specified for connector c4 between carComposite and speedManagerComposite.",
+      "No type is specified for connector c5 between carComposite and cruiseSpeedManagerComposite.",
+      "No type is specified for connector c6 between carComposite and dataManagerComposite.",
+      "No type is specified for connector c7 between speedManagerComposite and dataManagerComposite.",
+      "No type is specified for connector c8 between cruiseSpeedManagerComposite and dataManagerComposite."
+    ]
+  },
+  "samples/EMI/CruiseControlv4-Observer1.js": {
+    "errors": [],
+    "warnings": [
+      "Class Observer1 of object observer1 not found."
+    ]
+  },
+  "samples/EMI/CruiseControlv4-simple.js": {
+    "errors": [],
+    "warnings": [
+      "Class Controller of object cci_controller not found.",
+      "Class Actuation of object cci_actuation not found.",
+      "Class CruiseSpeedManager of object cci_csm not found.",
+      "Class PedalsManager of object cci_pm not found.",
+      "Class CCIButtonsPort of object cci_buttonsPort not found.",
+      "Class CCIPedalPort of object cci_clutchPedalPort not found.",
+      "Class CCIPedalPort of object cci_breakPedalPort not found.",
+      "Class CCIPedalPort of object cci_throttlePedalPort not found.",
+      "Class CCIControlOnOffPort of object cci_controlOnOffPort not found.",
+      "Class CCISpeedPort of object cci_speedPort not found.",
+      "Class CCICruiseSpeedPort of object cci_cruiseSpeedPort not found.",
+      "Class Buttons of actor env_buttons not found.",
+      "Class Pedal of actor env_clutchPedal not found.",
+      "Class Pedal of actor env_breakPedal not found.",
+      "Class Pedal of actor env_throttlePedal not found.",
+      "Class Engine of actor env_engine not found.",
+      "Class EnvButtonsPort of object env_envButtonsPort not found.",
+      "Class EnvPedalPort of object env_envClutchPedalPort not found.",
+      "Class EnvPedalPort of object env_envBreakPedalPort not found.",
+      "Class EnvPedalPort of object env_envThrottlePedalPort not found.",
+      "Class EnvControlOnOffPort of object env_envControlOnOffPort not found.",
+      "Class EnvSpeedPort of object env_envSpeedPort not found.",
+      "Class EnvCruiseSpeedPort of object env_envCruiseSpeedPort not found.",
+      "No class is specified for object cci_pm_pmClutchPedalPort.",
+      "No class is specified for object cci_pm_pmBreakPedalPort.",
+      "No class is specified for object cci_pm_pmThrottlePedalPort.",
+      "Operation updateSpeed on cci_actuation has 1 parameters, but trigger updateSpeed has 0 argument(s).",
+      "Operation updateSpeed on cci_actuation has 1 parameters, but trigger updateSpeed has 0 argument(s).",
+      "Operation speedCaptured on cci_csm has 1 parameters, but trigger speedCaptured has 0 argument(s).",
+      "Operation speedCaptured on cci_csm has 1 parameters, but trigger speedCaptured has 0 argument(s).",
+      "Operation updateSetPoint on env_engine has 1 parameters, but trigger updateSetPoint has 0 argument(s).",
+      "No type is specified for connector c_cciButtonsPort_envButtonsPort between cci_buttonsPort and env_envButtonsPort.",
+      "No type is specified for connector c_cciClutchPedalPort_envClutchPedalPort between cci_clutchPedalPort and env_envClutchPedalPort.",
+      "No type is specified for connector c_cciBreakPedalPort_envBreakPedalPort between cci_breakPedalPort and env_envBreakPedalPort.",
+      "No type is specified for connector c_cciThrottlePedalPort_envThrottlePedalPort between cci_throttlePedalPort and env_envThrottlePedalPort.",
+      "No type is specified for connector c_cciControlOnOffPort_envControlOnOffPort between cci_controlOnOffPort and env_envControlOnOffPort.",
+      "No type is specified for connector c_cciSpeedPort_envSpeedPort between cci_speedPort and env_envSpeedPort.",
+      "No type is specified for connector c_cciCruiseSpeedPort_envCruiseSpeedPort between cci_cruiseSpeedPort and env_envCruiseSpeedPort.",
+      "No type is specified for connector cci_c_buttonsPort_controller between cci_buttonsPort and cci_controller.",
+      "No type is specified for connector cci_c_clutchPedalPort_pmClutchPedalPort between cci_clutchPedalPort and cci_pm_pmClutchPedalPort.",
+      "No type is specified for connector cci_c_breakPedalPort_pmBreakPedalPort between cci_breakPedalPort and cci_pm_pmBreakPedalPort.",
+      "No type is specified for connector cci_c_throttlePedalPort_pmThrottlePedalPort between cci_throttlePedalPort and cci_pm_pmThrottlePedalPort.",
+      "No type is specified for connector cci_c_controlOnOffPort_actuation between cci_controlOnOffPort and cci_actuation.",
+      "No type is specified for connector cci_c_speedPort_actuation between cci_speedPort and cci_actuation.",
+      "No type is specified for connector cci_c_cruiseSpeedPort_csm between cci_cruiseSpeedPort and cci_csm.",
+      "No type is specified for connector cci_c_pm_controller between cci_pm and cci_controller.",
+      "No type is specified for connector cci_c_actuation_controller between cci_actuation and cci_controller.",
+      "No type is specified for connector cci_c_csm_controller between cci_csm and cci_controller.",
+      "No type is specified for connector cci_c_actuation_csm between cci_actuation and cci_csm.",
+      "No type is specified for connector env_c_buttonsPort_buttons between env_envButtonsPort and env_buttons.",
+      "No type is specified for connector env_c_clutchPedalPort_clutchPedal between env_envClutchPedalPort and env_clutchPedal.",
+      "No type is specified for connector env_c_breakPedalPort_breakPedal between env_envBreakPedalPort and env_breakPedal.",
+      "No type is specified for connector env_c_throttlePedalPort_throttlePedal between env_envThrottlePedalPort and env_throttlePedal.",
+      "No type is specified for connector env_c_controlOnOffPort_engine between env_envControlOnOffPort and env_engine.",
+      "No type is specified for connector env_c_speedPort_engine between env_envSpeedPort and env_engine.",
+      "No type is specified for connector env_c_cruiseSpeedPort_engine between env_envCruiseSpeedPort and env_engine.",
+      "No type is specified for connector cci_pm_owns_cci_pm_pmClutchPedalPort between cci_pm and cci_pm_pmClutchPedalPort.",
+      "No type is specified for connector cci_pm_owns_cci_pm_pmBreakPedalPort between cci_pm and cci_pm_pmBreakPedalPort.",
+      "No type is specified for connector cci_pm_owns_cci_pm_pmThrottlePedalPort between cci_pm and cci_pm_pmThrottlePedalPort."
+    ]
+  },
+  "samples/EMI/CruiseControlv4.js": {
+    "errors": [],
+    "warnings": [
+      "Class Controller of object cci_controller not found.",
+      "Class Actuation of object cci_actuation not found.",
+      "Class CruiseSpeedManager of object cci_csm not found.",
+      "Class PedalsManager of object cci_pm not found.",
+      "Class CCIButtonsPort of object cci_buttonsPort not found.",
+      "Class CCIPedalPort of object cci_clutchPedalPort not found.",
+      "Class CCIPedalPort of object cci_breakPedalPort not found.",
+      "Class CCIPedalPort of object cci_throttlePedalPort not found.",
+      "Class CCIControlOnOffPort of object cci_controlOnOffPort not found.",
+      "Class CCISpeedPort of object cci_speedPort not found.",
+      "Class CCICruiseSpeedPort of object cci_cruiseSpeedPort not found.",
+      "Class Buttons of actor env_buttons not found.",
+      "Class Pedal of actor env_clutchPedal not found.",
+      "Class Pedal of actor env_breakPedal not found.",
+      "Class Pedal of actor env_throttlePedal not found.",
+      "Class Engine of actor env_engine not found.",
+      "Class EnvButtonsPort of object env_envButtonsPort not found.",
+      "Class EnvPedalPort of object env_envClutchPedalPort not found.",
+      "Class EnvPedalPort of object env_envBreakPedalPort not found.",
+      "Class EnvPedalPort of object env_envThrottlePedalPort not found.",
+      "Class EnvControlOnOffPort of object env_envControlOnOffPort not found.",
+      "Class EnvSpeedPort of object env_envSpeedPort not found.",
+      "Class EnvCruiseSpeedPort of object env_envCruiseSpeedPort not found.",
+      "No class is specified for object cci_pm_pmClutchPedalPort.",
+      "No class is specified for object cci_pm_pmBreakPedalPort.",
+      "No class is specified for object cci_pm_pmThrottlePedalPort.",
+      "Operation updateSpeed on cci_actuation has 1 parameters, but trigger updateSpeed has 0 argument(s).",
+      "Operation updateSpeed on cci_actuation has 1 parameters, but trigger updateSpeed has 0 argument(s).",
+      "Operation speedCaptured on cci_csm has 1 parameters, but trigger speedCaptured has 0 argument(s).",
+      "Operation speedCaptured on cci_csm has 1 parameters, but trigger speedCaptured has 0 argument(s).",
+      "Operation updateSetPoint on env_engine has 1 parameters, but trigger updateSetPoint has 0 argument(s).",
+      "No type is specified for connector c_cciButtonsPort_envButtonsPort between cci_buttonsPort and env_envButtonsPort.",
+      "No type is specified for connector c_cciClutchPedalPort_envClutchPedalPort between cci_clutchPedalPort and env_envClutchPedalPort.",
+      "No type is specified for connector c_cciBreakPedalPort_envBreakPedalPort between cci_breakPedalPort and env_envBreakPedalPort.",
+      "No type is specified for connector c_cciThrottlePedalPort_envThrottlePedalPort between cci_throttlePedalPort and env_envThrottlePedalPort.",
+      "No type is specified for connector c_cciControlOnOffPort_envControlOnOffPort between cci_controlOnOffPort and env_envControlOnOffPort.",
+      "No type is specified for connector c_cciSpeedPort_envSpeedPort between cci_speedPort and env_envSpeedPort.",
+      "No type is specified for connector c_cciCruiseSpeedPort_envCruiseSpeedPort between cci_cruiseSpeedPort and env_envCruiseSpeedPort.",
+      "No type is specified for connector cci_c_buttonsPort_controller between cci_buttonsPort and cci_controller.",
+      "No type is specified for connector cci_c_clutchPedalPort_pmClutchPedalPort between cci_clutchPedalPort and cci_pm_pmClutchPedalPort.",
+      "No type is specified for connector cci_c_breakPedalPort_pmBreakPedalPort between cci_breakPedalPort and cci_pm_pmBreakPedalPort.",
+      "No type is specified for connector cci_c_throttlePedalPort_pmThrottlePedalPort between cci_throttlePedalPort and cci_pm_pmThrottlePedalPort.",
+      "No type is specified for connector cci_c_controlOnOffPort_actuation between cci_controlOnOffPort and cci_actuation.",
+      "No type is specified for connector cci_c_speedPort_actuation between cci_speedPort and cci_actuation.",
+      "No type is specified for connector cci_c_cruiseSpeedPort_csm between cci_cruiseSpeedPort and cci_csm.",
+      "No type is specified for connector cci_c_pm_controller between cci_pm and cci_controller.",
+      "No type is specified for connector cci_c_actuation_controller between cci_actuation and cci_controller.",
+      "No type is specified for connector cci_c_csm_controller between cci_csm and cci_controller.",
+      "No type is specified for connector cci_c_actuation_csm between cci_actuation and cci_csm.",
+      "No type is specified for connector env_c_buttonsPort_buttons between env_envButtonsPort and env_buttons.",
+      "No type is specified for connector env_c_clutchPedalPort_clutchPedal between env_envClutchPedalPort and env_clutchPedal.",
+      "No type is specified for connector env_c_breakPedalPort_breakPedal between env_envBreakPedalPort and env_breakPedal.",
+      "No type is specified for connector env_c_throttlePedalPort_throttlePedal between env_envThrottlePedalPort and env_throttlePedal.",
+      "No type is specified for connector env_c_controlOnOffPort_engine between env_envControlOnOffPort and env_engine.",
+      "No type is specified for connector env_c_speedPort_engine between env_envSpeedPort and env_engine.",
+      "No type is specified for connector env_c_cruiseSpeedPort_engine between env_envCruiseSpeedPort and env_engine.",
+      "No type is specified for connector cci_pm_owns_cci_pm_pmClutchPedalPort between cci_pm and cci_pm_pmClutchPedalPort.",
+      "No type is specified for connector cci_pm_owns_cci_pm_pmBreakPedalPort between cci_pm and cci_pm_pmBreakPedalPort.",
+      "No type is specified for connector cci_pm_owns_cci_pm_pmThrottlePedalPort between cci_pm and cci_pm_pmThrottlePedalPort."
+    ]
+  },
+  "samples/EMI/CruiseControlv4Real.js": {
+    "errors": [],
+    "warnings": [
+      "Class Controller of object cci_controller not found.",
+      "Class Actuation of object cci_actuation not found.",
+      "Class CruiseSpeedManager of object cci_csm not found.",
+      "Class PedalsManager of object cci_pm not found.",
+      "Class CCIButtonsPort of object cci_buttonsPort not found.",
+      "Class CCIPedalPort of object cci_clutchPedalPort not found.",
+      "Class CCIPedalPort of object cci_breakPedalPort not found.",
+      "Class CCIPedalPort of object cci_throttlePedalPort not found.",
+      "Class CCIControlOnOffPort of object cci_controlOnOffPort not found.",
+      "Class CCISpeedPort of object cci_speedPort not found.",
+      "Class CCICruiseSpeedPort of object cci_cruiseSpeedPort not found.",
+      "Class Buttons of actor env_buttons not found.",
+      "Class Pedal of actor env_clutchPedal not found.",
+      "Class Pedal of actor env_breakPedal not found.",
+      "Class Pedal of actor env_throttlePedal not found.",
+      "Class Engine of actor env_engine not found.",
+      "Class EnvButtonsPort of object env_envButtonsPort not found.",
+      "Class EnvPedalPort of object env_envClutchPedalPort not found.",
+      "Class EnvPedalPort of object env_envBreakPedalPort not found.",
+      "Class EnvPedalPort of object env_envThrottlePedalPort not found.",
+      "Class EnvControlOnOffPort of object env_envControlOnOffPort not found.",
+      "Class EnvSpeedPort of object env_envSpeedPort not found.",
+      "Class EnvCruiseSpeedPort of object env_envCruiseSpeedPort not found.",
+      "No class is specified for object cci_pm_pmClutchPedalPort.",
+      "No class is specified for object cci_pm_pmBreakPedalPort.",
+      "No class is specified for object cci_pm_pmThrottlePedalPort.",
+      "Operation updateSpeed on cci_actuation has 1 parameters, but trigger updateSpeed has 0 argument(s).",
+      "Operation updateSpeed on cci_actuation has 1 parameters, but trigger updateSpeed has 0 argument(s).",
+      "Operation speedCaptured on cci_csm has 1 parameters, but trigger speedCaptured has 0 argument(s).",
+      "Operation speedCaptured on cci_csm has 1 parameters, but trigger speedCaptured has 0 argument(s).",
+      "Operation updateSetPoint on env_engine has 1 parameters, but trigger updateSetPoint has 0 argument(s).",
+      "No type is specified for connector c_cciButtonsPort_envButtonsPort between cci_buttonsPort and env_envButtonsPort.",
+      "No type is specified for connector c_cciClutchPedalPort_envClutchPedalPort between cci_clutchPedalPort and env_envClutchPedalPort.",
+      "No type is specified for connector c_cciBreakPedalPort_envBreakPedalPort between cci_breakPedalPort and env_envBreakPedalPort.",
+      "No type is specified for connector c_cciThrottlePedalPort_envThrottlePedalPort between cci_throttlePedalPort and env_envThrottlePedalPort.",
+      "No type is specified for connector c_cciControlOnOffPort_envControlOnOffPort between cci_controlOnOffPort and env_envControlOnOffPort.",
+      "No type is specified for connector c_cciSpeedPort_envSpeedPort between cci_speedPort and env_envSpeedPort.",
+      "No type is specified for connector c_cciCruiseSpeedPort_envCruiseSpeedPort between cci_cruiseSpeedPort and env_envCruiseSpeedPort.",
+      "No type is specified for connector cci_c_buttonsPort_controller between cci_buttonsPort and cci_controller.",
+      "No type is specified for connector cci_c_clutchPedalPort_pmClutchPedalPort between cci_clutchPedalPort and cci_pm_pmClutchPedalPort.",
+      "No type is specified for connector cci_c_breakPedalPort_pmBreakPedalPort between cci_breakPedalPort and cci_pm_pmBreakPedalPort.",
+      "No type is specified for connector cci_c_throttlePedalPort_pmThrottlePedalPort between cci_throttlePedalPort and cci_pm_pmThrottlePedalPort.",
+      "No type is specified for connector cci_c_controlOnOffPort_actuation between cci_controlOnOffPort and cci_actuation.",
+      "No type is specified for connector cci_c_speedPort_actuation between cci_speedPort and cci_actuation.",
+      "No type is specified for connector cci_c_cruiseSpeedPort_csm between cci_cruiseSpeedPort and cci_csm.",
+      "No type is specified for connector cci_c_pm_controller between cci_pm and cci_controller.",
+      "No type is specified for connector cci_c_actuation_controller between cci_actuation and cci_controller.",
+      "No type is specified for connector cci_c_csm_controller between cci_csm and cci_controller.",
+      "No type is specified for connector cci_c_actuation_csm between cci_actuation and cci_csm.",
+      "No type is specified for connector env_c_buttonsPort_buttons between env_envButtonsPort and env_buttons.",
+      "No type is specified for connector env_c_clutchPedalPort_clutchPedal between env_envClutchPedalPort and env_clutchPedal.",
+      "No type is specified for connector env_c_breakPedalPort_breakPedal between env_envBreakPedalPort and env_breakPedal.",
+      "No type is specified for connector env_c_throttlePedalPort_throttlePedal between env_envThrottlePedalPort and env_throttlePedal.",
+      "No type is specified for connector env_c_controlOnOffPort_engine between env_envControlOnOffPort and env_engine.",
+      "No type is specified for connector env_c_speedPort_engine between env_envSpeedPort and env_engine.",
+      "No type is specified for connector env_c_cruiseSpeedPort_engine between env_envCruiseSpeedPort and env_engine.",
+      "No type is specified for connector cci_pm_owns_cci_pm_pmClutchPedalPort between cci_pm and cci_pm_pmClutchPedalPort.",
+      "No type is specified for connector cci_pm_owns_cci_pm_pmBreakPedalPort between cci_pm and cci_pm_pmBreakPedalPort.",
+      "No type is specified for connector cci_pm_owns_cci_pm_pmThrottlePedalPort between cci_pm and cci_pm_pmThrottlePedalPort."
+    ]
+  },
+  "samples/EMI/LevelCrossing.js": {
+    "errors": [],
+    "warnings": [
+      "Class Train of object train not found.",
+      "Class EntranceTC of object tcEntrance0 not found.",
+      "Class EntranceTC of object tcEntrance1 not found.",
+      "Class ExitTC of object tcExit not found.",
+      "Class Controller of object controller not found.",
+      "Class RailwaySign of object railwaySign not found.",
+      "Class RoadSign of object roadSign not found.",
+      "Class Gate of object gate not found.",
+      "Operation activation on tcEntrance0 has 1 parameters, but trigger activation has 0 argument(s).",
+      "Operation activation on tcEntrance1 has 1 parameters, but trigger activation has 0 argument(s).",
+      "Operation activation on tcExit has 1 parameters, but trigger activation has 0 argument(s).",
+      "Operation entranceDetection on controller has 1 parameters, but trigger entranceDetection has 0 argument(s).",
+      "Operation entranceDetection on controller has 1 parameters, but trigger entranceDetection has 0 argument(s).",
+      "Operation exitDetection on controller has 1 parameters, but trigger exitDetection has 0 argument(s).",
+      "No type is specified for connector c1 between gate and controller.",
+      "No type is specified for connector c20 between tcEntrance0 and controller.",
+      "No type is specified for connector c21 between tcEntrance1 and controller.",
+      "No type is specified for connector c3 between tcExit and controller.",
+      "No type is specified for connector c4 between roadSign and controller.",
+      "No type is specified for connector c50 between train and tcEntrance0.",
+      "No type is specified for connector c51 between train and tcEntrance1.",
+      "No type is specified for connector c6 between train and tcExit.",
+      "No type is specified for connector c7 between railwaySign and controller.",
+      "No type is specified for connector c8 between railwaySign and train."
+    ]
+  },
+  "samples/EMI/ProducerConsumerIM.js": {
+    "errors": [],
+    "warnings": [
+      "Class Producer of object Mainproducer not found.",
+      "Class Intermediate of object Mainintermediate not found.",
+      "Class Consumer of object Mainconsumer0 not found.",
+      "Class Consumer of object Mainconsumer1 not found.",
+      "Class StockI of object MainstockI not found.",
+      "Class StockC of object MainstockC not found.",
+      "Operation eventP1 on Mainintermediate has 1 parameters, but trigger eventP1 has 0 argument(s).",
+      "Operation eventP2 on Mainintermediate has 2 parameters, but trigger eventP2 has 0 argument(s).",
+      "Operation eventI1 on Mainconsumer0 has 1 parameters, but trigger eventI1 has 0 argument(s).",
+      "Operation eventI2 on Mainconsumer0 has 2 parameters, but trigger eventI2 has 0 argument(s).",
+      "Operation eventI1 on Mainconsumer1 has 1 parameters, but trigger eventI1 has 0 argument(s).",
+      "Operation eventI2 on Mainconsumer1 has 2 parameters, but trigger eventI2 has 0 argument(s).",
+      "No type is specified for connector c1 between Mainproducer and Mainintermediate.",
+      "No type is specified for connector c20 between Mainintermediate and Mainconsumer0.",
+      "No type is specified for connector c21 between Mainintermediate and Mainconsumer1.",
+      "No type is specified for connector c3 between Mainintermediate and MainstockI.",
+      "No type is specified for connector c40 between Mainconsumer0 and MainstockC.",
+      "No type is specified for connector c41 between Mainconsumer1 and MainstockC."
+    ]
+  },
+  "samples/EMI/SyncComposition.js": {
+    "errors": [],
+    "warnings": [
+      "Class Object of object object not found.",
+      "Class Clock of object clock not found.",
+      "No type is specified for connector c between object and clock."
+    ]
+  },
+  "samples/EMI/TestIO.js": {
+    "errors": [],
+    "warnings": [
+      "Class Controller of object controller not found.",
+      "Class Led of object led not found.",
+      "No type is specified for connector c between controller and led."
+    ]
+  },
+  "samples/EMI/TimerModel.js": {
+    "errors": [],
+    "warnings": [
+      "Class Clock of object clock not found.",
+      "Class Timer of object timer not found.",
+      "Class User of object user not found.",
+      "No type is specified for connector c1 between clock and timer.",
+      "No type is specified for connector c2 between timer and user."
+    ]
+  },
+  "samples/EMI/TrafficLight.js": {
+    "errors": [],
+    "warnings": [
+      "Class Controller of object controller not found.",
+      "Class TrafficLight of object trafficLights0 not found.",
+      "Class TrafficLight of object trafficLights1 not found.",
+      "No type is specified for connector c0 between controller and trafficLights0.",
+      "No type is specified for connector c1 between controller and trafficLights1."
+    ]
+  },
+  "samples/EMI_TAS.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object ihm.",
+      "No class is specified for object gestionTas.",
+      "No class is specified for object tas.",
+      "No class is specified for object porte.",
+      "No class is specified for object roue.",
+      "No class is specified for object demonstrateur.",
+      "No class is specified for object maquette.",
+      "No class is specified for object archiveurLogs.",
+      "Could not find operation recevoirEtatTasIhm on ihm that appears as trigger in its state machine.",
+      "Could not find operation quitter on ihm that appears as trigger in its state machine.",
+      "Could not find operation sortirTas on ihm that appears as trigger in its state machine.",
+      "Could not find operation rentrerTas on ihm that appears as trigger in its state machine.",
+      "Could not find operation mettreAZeroTas on ihm that appears as trigger in its state machine.",
+      "Could not find operation lancer on ihm that appears as trigger in its state machine.",
+      "Could not find operation recevoirEtatTasGestionTas on gestionTas that appears as trigger in its state machine.",
+      "Could not find operation mettreAZeroTas on gestionTas that appears as trigger in its state machine.",
+      "Could not find operation sortirTas on gestionTas that appears as trigger in its state machine.",
+      "Could not find operation rentrerTas on gestionTas that appears as trigger in its state machine.",
+      "Could not find operation obtenirEtatTas on gestionTas that appears as trigger in its state machine.",
+      "Could not find operation recevoirEtatVerifie on tas that appears as trigger in its state machine.",
+      "Could not find operation recevoirEtatEchec on tas that appears as trigger in its state machine.",
+      "Could not find operation initialiserTas on tas that appears as trigger in its state machine.",
+      "Could not find operation rentrerTas on tas that appears as trigger in its state machine.",
+      "Could not find operation sortirTas on tas that appears as trigger in its state machine.",
+      "Could not find operation obtenirEtatTas on tas that appears as trigger in its state machine.",
+      "Could not find operation fermer on porte that appears as trigger in its state machine.",
+      "Could not find operation ouvrir on porte that appears as trigger in its state machine.",
+      "Could not find operation rentrer on roue that appears as trigger in its state machine.",
+      "Could not find operation sortir on roue that appears as trigger in its state machine.",
+      "Could not find operation ecranTasSignal on demonstrateur that appears as trigger in its state machine.",
+      "Could not find operation ouvrirPorte on maquette that appears as trigger in its state machine.",
+      "Could not find operation fermerPorte on maquette that appears as trigger in its state machine.",
+      "Could not find operation sortirRoue on maquette that appears as trigger in its state machine.",
+      "Could not find operation rentrerRoue on maquette that appears as trigger in its state machine.",
+      "No type is specified for connector c2 between ihm and archiveurLogs.",
+      "No type is specified for connector c3 between ihm and gestionTas.",
+      "No type is specified for connector c4 between archiveurLogs and roue.",
+      "No type is specified for connector c5 between archiveurLogs and porte.",
+      "No type is specified for connector c7 between gestionTas and tas.",
+      "No type is specified for connector c8 between tas and roue.",
+      "No type is specified for connector c9 between tas and porte.",
+      "No type is specified for connector c10 between demonstrateur and ihm.",
+      "No type is specified for connector c11 between maquette and porte.",
+      "No type is specified for connector c12 between maquette and roue."
+    ]
+  },
+  "samples/EMI_TAS1.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object ihm.",
+      "No class is specified for object reseau.",
+      "No class is specified for object gestionTas.",
+      "No class is specified for object tas.",
+      "No class is specified for object porte.",
+      "No class is specified for object roue.",
+      "No class is specified for object demonstrateur.",
+      "No class is specified for object maquette.",
+      "No class is specified for object archiveurLogs.",
+      "Could not find operation quitter on ihm that appears as trigger in its state machine.",
+      "Could not find operation deconnecte on ihm that appears as trigger in its state machine.",
+      "Could not find operation sortirTas on ihm that appears as trigger in its state machine.",
+      "Could not find operation rentrerTas on ihm that appears as trigger in its state machine.",
+      "Could not find operation recevoirEtatTasIhm on ihm that appears as trigger in its state machine.",
+      "Could not find operation mettreAZeroTas on ihm that appears as trigger in its state machine.",
+      "Could not find operation lancer on ihm that appears as trigger in its state machine.",
+      "Could not find operation connexion on ihm that appears as trigger in its state machine.",
+      "Could not find operation connexion on reseau that appears as trigger in its state machine.",
+      "Could not find operation connexionPerdue on reseau that appears as trigger in its state machine.",
+      "Could not find operation recevoirEtatTasGestionTas on gestionTas that appears as trigger in its state machine.",
+      "Could not find operation rentrerTas on gestionTas that appears as trigger in its state machine.",
+      "Could not find operation sortirTas on gestionTas that appears as trigger in its state machine.",
+      "Could not find operation mettreAZeroTas on gestionTas that appears as trigger in its state machine.",
+      "Could not find operation initialiserTas on tas that appears as trigger in its state machine.",
+      "Could not find operation sortirTas on tas that appears as trigger in its state machine.",
+      "Could not find operation rentrerTas on tas that appears as trigger in its state machine.",
+      "Could not find operation recevoirEtatVerifie on tas that appears as trigger in its state machine.",
+      "Could not find operation recevoirEtatEchec on tas that appears as trigger in its state machine.",
+      "Could not find operation obtenirEtatTas on tas that appears as trigger in its state machine.",
+      "Could not find operation fermer on porte that appears as trigger in its state machine.",
+      "Could not find operation ouvrir on porte that appears as trigger in its state machine.",
+      "Could not find operation rentrer on roue that appears as trigger in its state machine.",
+      "Could not find operation sortir on roue that appears as trigger in its state machine.",
+      "Could not find operation ouvrirPorte on maquette that appears as trigger in its state machine.",
+      "Could not find operation fermerPorte on maquette that appears as trigger in its state machine.",
+      "Could not find operation sortirRoue on maquette that appears as trigger in its state machine.",
+      "Could not find operation rentrerRoue on maquette that appears as trigger in its state machine.",
+      "No type is specified for connector c1 between ihm and reseau.",
+      "No type is specified for connector c2 between ihm and archiveurLogs.",
+      "No type is specified for connector c3 between ihm and gestionTas.",
+      "No type is specified for connector c4 between archiveurLogs and roue.",
+      "No type is specified for connector c5 between archiveurLogs and porte.",
+      "No type is specified for connector c6 between reseau and gestionTas.",
+      "No type is specified for connector c7 between gestionTas and tas.",
+      "No type is specified for connector c8 between tas and roue.",
+      "No type is specified for connector c9 between tas and porte.",
+      "No type is specified for connector c10 between demonstrateur and ihm.",
+      "No type is specified for connector c11 between maquette and porte.",
+      "No type is specified for connector c12 between maquette and roue."
+    ]
+  },
+  "samples/ExemplesExplicites.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object TraductionEntryExitDo.",
+      "No class is specified for object After.",
+      "No class is specified for object When.",
+      "No class is specified for object Choice.",
+      "No class is specified for object CompositeWithoutHistory.",
+      "No class is specified for object CompositeWithHistory.",
+      "Could not find operation evt1 on TraductionEntryExitDo that appears as trigger in its state machine.",
+      "Could not find operation evt2 on TraductionEntryExitDo that appears as trigger in its state machine.",
+      "Could not find operation evt3 on TraductionEntryExitDo that appears as trigger in its state machine.",
+      "Could not find operation stop on After that appears as trigger in its state machine.",
+      "Could not find operation setTruc on After that appears as trigger in its state machine.",
+      "Could not find operation start on Choice that appears as trigger in its state machine.",
+      "Could not find operation ev2 on CompositeWithoutHistory that appears as trigger in its state machine.",
+      "Could not find operation ev1 on CompositeWithoutHistory that appears as trigger in its state machine.",
+      "Could not find operation ev2 on CompositeWithHistory that appears as trigger in its state machine.",
+      "Could not find operation ev1 on CompositeWithHistory that appears as trigger in its state machine.",
+      "Could not find operation ev3 on CompositeWithHistory that appears as trigger in its state machine."
+    ]
+  },
+  "samples/JDLevelCrossing.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for actor Train.",
+      "No class is specified for object Radar.",
+      "No class is specified for object LCKeeper.",
+      "No class is specified for object LC.",
+      "No class is specified for actor RoadUser.",
+      "Operation sigTrainArriving on LCKeeper has 0 parameters, but trigger sigTrainArriving(s) has 1 argument(s).",
+      "No type is specified for connector C1 between Train and Radar.",
+      "No type is specified for connector C2 between Radar and LCKeeper.",
+      "No type is specified for connector C3 between LCKeeper and LC.",
+      "No type is specified for connector C4 between LCKeeper and Train.",
+      "No type is specified for connector C5 between LC and RoadUser."
+    ]
+  },
+  "samples/Lamp.js": {
+    "errors": [],
+    "warnings": [
+      "Class Lamp of object lamp not found.",
+      "Could not find operation offButton on lamp that appears as trigger in its state machine."
+    ]
+  },
+  "samples/LampWithDisablableTimer.js": {
+    "errors": [],
+    "warnings": [
+      "Class Lamp of object lamp not found.",
+      "Could not find operation offButton on lamp that appears as trigger in its state machine."
+    ]
+  },
+  "samples/LampeEssaiTest-RemoteStorage.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object Lamp.",
+      "No class is specified for object sp.",
+      "Could not find operation boutON on Lamp that appears as trigger in its state machine.",
+      "Could not find operation boutOFF on Lamp that appears as trigger in its state machine.",
+      "No type is specified for connector C1 between Lamp and sp."
+    ]
+  },
+  "samples/LampeEssaiTest.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object LampeEssaiTest.",
+      "Could not find operation boutON on LampeEssaiTest that appears as trigger in its state machine.",
+      "Could not find operation boutOFF on LampeEssaiTest that appears as trigger in its state machine."
+    ]
+  },
+  "samples/LampeV1.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object LampeV1.",
+      "Could not find operation boutON on LampeV1 that appears as trigger in its state machine.",
+      "Could not find operation boutOFF on LampeV1 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/LampeV1_2.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object LampeV1_2.",
+      "Could not find operation boutON on LampeV1_2 that appears as trigger in its state machine.",
+      "Could not find operation stop on LampeV1_2 that appears as trigger in its state machine.",
+      "Could not find operation boutOFF on LampeV1_2 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/LampeV2.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object LampeV2.",
+      "Could not find operation boutON on LampeV2 that appears as trigger in its state machine.",
+      "Could not find operation boutOFF on LampeV2 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/LecteurK7V1.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object LecteurK7V1.",
+      "Could not find operation boutON on LecteurK7V1 that appears as trigger in its state machine.",
+      "Could not find operation boutStop on LecteurK7V1 that appears as trigger in its state machine.",
+      "Could not find operation finK7 on LecteurK7V1 that appears as trigger in its state machine.",
+      "Could not find operation boutPlay on LecteurK7V1 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/LecteurK7V2.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object LecteurK7V2.",
+      "Could not find operation boutON on LecteurK7V2 that appears as trigger in its state machine.",
+      "Could not find operation finK7 on LecteurK7V2 that appears as trigger in its state machine.",
+      "Could not find operation boutStop on LecteurK7V2 that appears as trigger in its state machine.",
+      "Could not find operation boutPlay on LecteurK7V2 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/LecteurK7V3.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object LecteurK7V3.",
+      "Could not find operation boutON on LecteurK7V3 that appears as trigger in its state machine.",
+      "Could not find operation boutStop on LecteurK7V3 that appears as trigger in its state machine.",
+      "Could not find operation finK7 on LecteurK7V3 that appears as trigger in its state machine.",
+      "Could not find operation boutPlay on LecteurK7V3 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/LecteurK7V4.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object LecteurK7V4.",
+      "Could not find operation boutON on LecteurK7V4 that appears as trigger in its state machine.",
+      "Could not find operation boutPlay on LecteurK7V4 that appears as trigger in its state machine.",
+      "Could not find operation boutStop on LecteurK7V4 that appears as trigger in its state machine.",
+      "Could not find operation finK7 on LecteurK7V4 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/LecteurK7V5.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object LecteurK7V5.",
+      "Could not find operation boutON on LecteurK7V5 that appears as trigger in its state machine.",
+      "Could not find operation boutStop on LecteurK7V5 that appears as trigger in its state machine.",
+      "Could not find operation finK7 on LecteurK7V5 that appears as trigger in its state machine.",
+      "Could not find operation boutPlay on LecteurK7V5 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/LevelCrossing.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object train.",
+      "No class is specified for object tcEntrance0.",
+      "No class is specified for object tcEntrance1.",
+      "No class is specified for object tcExit.",
+      "No class is specified for object controller.",
+      "No class is specified for object railwaySign.",
+      "No class is specified for object roadSign.",
+      "No class is specified for object gate.",
+      "Could not find operation authorization on train that appears as trigger in its state machine.",
+      "Could not find operation activation0 on tcEntrance0 that appears as trigger in its state machine.",
+      "Could not find operation activation1 on tcEntrance1 that appears as trigger in its state machine.",
+      "Could not find operation activation2 on tcExit that appears as trigger in its state machine.",
+      "Could not find operation entranceDetection on controller that appears as trigger in its state machine.",
+      "Could not find operation exitDetection on controller that appears as trigger in its state machine.",
+      "Could not find operation roadSignOn on controller that appears as trigger in its state machine.",
+      "Could not find operation gateClosed on controller that appears as trigger in its state machine.",
+      "Could not find operation railwaySignOn on controller that appears as trigger in its state machine.",
+      "Could not find operation gateOpen on controller that appears as trigger in its state machine.",
+      "Could not find operation roadSignOff on controller that appears as trigger in its state machine.",
+      "Could not find operation switchRailwaySignOff on railwaySign that appears as trigger in its state machine.",
+      "Could not find operation switchRailwaySignOn on railwaySign that appears as trigger in its state machine.",
+      "Could not find operation switchRoadSignOn on roadSign that appears as trigger in its state machine.",
+      "Could not find operation switchRoadSignOff on roadSign that appears as trigger in its state machine.",
+      "Could not find operation close on gate that appears as trigger in its state machine.",
+      "Could not find operation open on gate that appears as trigger in its state machine.",
+      "Could not find operation open on gate corresponding to message open sent on connector C1 from controller.",
+      "Could not find operation close on gate corresponding to message close sent on connector C1 from controller.",
+      "Could not find operation gateOpen on controller corresponding to message gateOpen sent on connector C1 from gate.",
+      "Could not find operation gateClosed on controller corresponding to message gateClosed sent on connector C1 from gate.",
+      "No type is specified for connector C1 between controller and gate.",
+      "Could not find operation entranceDetection on controller corresponding to message entranceDetection sent on connector C2_0 from tcEntrance0.",
+      "No type is specified for connector C2_0 between controller and tcEntrance0.",
+      "Could not find operation entranceDetection on controller corresponding to message entranceDetection sent on connector C2_1 from tcEntrance1.",
+      "No type is specified for connector C2_1 between controller and tcEntrance1.",
+      "Could not find operation exitDetection on controller corresponding to message exitDetection sent on connector C3 from tcExit.",
+      "No type is specified for connector C3 between controller and tcExit.",
+      "Could not find operation switchRoadSignOn on roadSign corresponding to message switchRoadSignOn sent on connector C4 from controller.",
+      "Could not find operation switchRoadSignOff on roadSign corresponding to message switchRoadSignOff sent on connector C4 from controller.",
+      "Could not find operation roadSignOn on controller corresponding to message roadSignOn sent on connector C4 from roadSign.",
+      "Could not find operation roadSignOff on controller corresponding to message roadSignOff sent on connector C4 from roadSign.",
+      "No type is specified for connector C4 between controller and roadSign.",
+      "Could not find operation entrance0 on tcEntrance0 corresponding to message entrance0 sent on connector C5_0 from train.",
+      "No type is specified for connector C5_0 between train and tcEntrance0.",
+      "Could not find operation entrance1 on tcEntrance1 corresponding to message entrance1 sent on connector C5_1 from train.",
+      "No type is specified for connector C5_1 between train and tcEntrance1.",
+      "Could not find operation entrance2 on tcExit corresponding to message entrance2 sent on connector C6 from train.",
+      "No type is specified for connector C6 between train and tcExit.",
+      "Could not find operation switchRailwaySignOn on railwaySign corresponding to message switchRailwaySignOn sent on connector C7 from controller.",
+      "Could not find operation switchRailwaySignOff on railwaySign corresponding to message switchRailwaySignOff sent on connector C7 from controller.",
+      "Could not find operation railwaySignOn on controller corresponding to message railwaySignOn sent on connector C7 from railwaySign.",
+      "Could not find operation railwaySignOff on controller corresponding to message railwaySignOff sent on connector C7 from railwaySign.",
+      "No type is specified for connector C7 between controller and railwaySign.",
+      "Could not find operation authorization on train corresponding to message authorization sent on connector C8 from railwaySign.",
+      "No type is specified for connector C8 between train and railwaySign."
+    ]
+  },
+  "samples/PassageANiveauEssaiTest.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object aStartEntryTrainDetector.",
+      "No class is specified for object aGateMan.",
+      "No class is specified for object anEndEntryTrainDetector.",
+      "No class is specified for object anExitTrainDetector.",
+      "No class is specified for object aGate.",
+      "No class is specified for object aSiren.",
+      "No class is specified for object aTrafficLight.",
+      "Could not find operation trainEnterUpStream on aGateMan corresponding to message trainEnterUpStream sent on connector C1 from aStartEntryTrainDetector.",
+      "Could not find operation test on aStartEntryTrainDetector corresponding to message test sent on connector C1 from aGateMan.",
+      "No type is specified for connector C1 between aStartEntryTrainDetector and aGateMan.",
+      "Could not find operation trainExitUpStream on aGateMan corresponding to message trainExitUpStream sent on connector C2 from anEndEntryTrainDetector.",
+      "Could not find operation test on anEndEntryTrainDetector corresponding to message test sent on connector C2 from aGateMan.",
+      "No type is specified for connector C2 between anEndEntryTrainDetector and aGateMan.",
+      "Could not find operation trainExitDownStream on aGateMan corresponding to message trainExitDownStream sent on connector C3 from anExitTrainDetector.",
+      "Could not find operation test on anExitTrainDetector corresponding to message test sent on connector C3 from aGateMan.",
+      "No type is specified for connector C3 between anExitTrainDetector and aGateMan.",
+      "Could not find operation openGate on aGate corresponding to message openGate sent on connector C4 from aGateMan.",
+      "Could not find operation closeGate on aGate corresponding to message closeGate sent on connector C4 from aGateMan.",
+      "Could not find operation test on aGateMan corresponding to message test sent on connector C4 from aGate.",
+      "No type is specified for connector C4 between aGateMan and aGate.",
+      "Could not find operation ring on aSiren corresponding to message ring sent on connector C5 from aGateMan.",
+      "Could not find operation unring on aSiren corresponding to message unring sent on connector C5 from aGateMan.",
+      "Could not find operation test on aGateMan corresponding to message test sent on connector C5 from aSiren.",
+      "No type is specified for connector C5 between aGateMan and aSiren.",
+      "Could not find operation turnRed on aTrafficLight corresponding to message turnRed sent on connector C6 from aGateMan.",
+      "Could not find operation turnGreen on aTrafficLight corresponding to message turnGreen sent on connector C6 from aGateMan.",
+      "Could not find operation turnOrange on aTrafficLight corresponding to message turnOrange sent on connector C6 from aGateMan.",
+      "Could not find operation test on aGateMan corresponding to message test sent on connector C6 from aTrafficLight.",
+      "No type is specified for connector C6 between aGateMan and aTrafficLight."
+    ]
+  },
+  "samples/PassageANiveauV1.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object aGateMan.",
+      "No class is specified for object aGate.",
+      "No class is specified for object aSiren.",
+      "No class is specified for object aTrafficLight.",
+      "No class is specified for object aStartEntryTrainDetector.",
+      "No class is specified for object anEndEntryTrainDetector.",
+      "No class is specified for object anExitTrainDetector.",
+      "No type is specified for connector C1 between aStartEntryTrainDetector and aGateMan.",
+      "No type is specified for connector C2 between anEndEntryTrainDetector and aGateMan.",
+      "No type is specified for connector C3 between anExitTrainDetector and aGateMan.",
+      "No type is specified for connector C4 between aGateMan and aGate.",
+      "No type is specified for connector C5 between aGateMan and aSiren.",
+      "No type is specified for connector C6 between aGateMan and aTrafficLight."
+    ]
+  },
+  "samples/PassageANiveauV2.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object aGateMan.",
+      "No class is specified for object aGate.",
+      "No class is specified for object aSiren.",
+      "No class is specified for object aTrafficLight.",
+      "No class is specified for object aStartEntryTrainDetector.",
+      "No class is specified for object anEndEntryTrainDetector.",
+      "No class is specified for object anExitTrainDetector.",
+      "No type is specified for connector C1 between aStartEntryTrainDetector and aGateMan.",
+      "No type is specified for connector C2 between anEndEntryTrainDetector and aGateMan.",
+      "No type is specified for connector C3 between anExitTrainDetector and aGateMan.",
+      "No type is specified for connector C4 between aGateMan and aGate.",
+      "No type is specified for connector C5 between aGateMan and aSiren.",
+      "No type is specified for connector C6 between aGateMan and aTrafficLight."
+    ]
+  },
+  "samples/PassageANiveauV3.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object aStartEntryTrainDetector.",
+      "No class is specified for object aGateMan.",
+      "No class is specified for object anEndEntryTrainDetector.",
+      "No class is specified for object anExitTrainDetector.",
+      "No class is specified for object aGate.",
+      "No class is specified for object aSiren.",
+      "No class is specified for object aTrafficLight.",
+      "Could not find operation trainEnterUpStream on aGateMan corresponding to message trainEnterUpStream sent on connector C1 from aStartEntryTrainDetector.",
+      "No type is specified for connector C1 between aStartEntryTrainDetector and aGateMan.",
+      "Could not find operation trainExitUpStream on aGateMan corresponding to message trainExitUpStream sent on connector C2 from anEndEntryTrainDetector.",
+      "No type is specified for connector C2 between anEndEntryTrainDetector and aGateMan.",
+      "Could not find operation trainExitDownStream on aGateMan corresponding to message trainExitDownStream sent on connector C3 from anExitTrainDetector.",
+      "No type is specified for connector C3 between anExitTrainDetector and aGateMan.",
+      "Could not find operation openGate on aGate corresponding to message openGate sent on connector C4 from aGateMan.",
+      "Could not find operation closeGate on aGate corresponding to message closeGate sent on connector C4 from aGateMan.",
+      "No type is specified for connector C4 between aGateMan and aGate.",
+      "Could not find operation ring on aSiren corresponding to message ring sent on connector C5 from aGateMan.",
+      "Could not find operation unring on aSiren corresponding to message unring sent on connector C5 from aGateMan.",
+      "No type is specified for connector C5 between aGateMan and aSiren.",
+      "Could not find operation turnRed on aTrafficLight corresponding to message turnRed sent on connector C6 from aGateMan.",
+      "Could not find operation turnGreen on aTrafficLight corresponding to message turnGreen sent on connector C6 from aGateMan.",
+      "Could not find operation turnOrange on aTrafficLight corresponding to message turnOrange sent on connector C6 from aGateMan.",
+      "No type is specified for connector C6 between aGateMan and aTrafficLight."
+    ]
+  },
+  "samples/PhotoFinish.js": {
+    "errors": [],
+    "warnings": [
+      "Class PhotoFinish of object photoFinish not found."
+    ]
+  },
+  "samples/PubliphoneV1.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object PubliphoneV1.",
+      "Could not find operation décrocher on PubliphoneV1 that appears as trigger in its state machine.",
+      "Could not find operation mettrePièce on PubliphoneV1 that appears as trigger in its state machine.",
+      "Could not find operation composer on PubliphoneV1 that appears as trigger in its state machine.",
+      "Could not find operation débuterCom on PubliphoneV1 that appears as trigger in its state machine.",
+      "Could not find operation raccrocher on PubliphoneV1 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/PubliphoneV2.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object PubliphoneV2.",
+      "Could not find operation décrocher on PubliphoneV2 that appears as trigger in its state machine.",
+      "Could not find operation mettrePièce on PubliphoneV2 that appears as trigger in its state machine.",
+      "Could not find operation raccrocher on PubliphoneV2 that appears as trigger in its state machine.",
+      "Could not find operation composer on PubliphoneV2 that appears as trigger in its state machine.",
+      "Could not find operation débuterCom on PubliphoneV2 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/PubliphoneV3.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object PubliphoneV3.",
+      "Could not find operation décrocher on PubliphoneV3 that appears as trigger in its state machine.",
+      "Could not find operation raccrocher on PubliphoneV3 that appears as trigger in its state machine.",
+      "Could not find operation mettrePièce on PubliphoneV3 that appears as trigger in its state machine.",
+      "Could not find operation composer on PubliphoneV3 that appears as trigger in its state machine.",
+      "Could not find operation débuterCom on PubliphoneV3 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/PubliphoneV4.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object PubliphoneV4.",
+      "Could not find operation décrocher on PubliphoneV4 that appears as trigger in its state machine.",
+      "Could not find operation raccrocher on PubliphoneV4 that appears as trigger in its state machine.",
+      "Could not find operation mettrePièce on PubliphoneV4 that appears as trigger in its state machine.",
+      "Could not find operation composer on PubliphoneV4 that appears as trigger in its state machine.",
+      "Could not find operation débuterCom on PubliphoneV4 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/PubliphoneV5.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object PubliphoneV5.",
+      "Could not find operation décrocher on PubliphoneV5 that appears as trigger in its state machine.",
+      "Could not find operation raccrocher on PubliphoneV5 that appears as trigger in its state machine.",
+      "Could not find operation mettrePièce on PubliphoneV5 that appears as trigger in its state machine.",
+      "Could not find operation composer on PubliphoneV5 that appears as trigger in its state machine.",
+      "Could not find operation erreurCom on PubliphoneV5 that appears as trigger in its state machine.",
+      "Could not find operation débuterCom on PubliphoneV5 that appears as trigger in its state machine.",
+      "Could not find operation finComCorrespondant on PubliphoneV5 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/PubliphoneV6.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object PubliphoneV6.",
+      "Could not find operation décrocher on PubliphoneV6 that appears as trigger in its state machine.",
+      "Could not find operation raccrocher on PubliphoneV6 that appears as trigger in its state machine.",
+      "Could not find operation mettrePièce on PubliphoneV6 that appears as trigger in its state machine.",
+      "Could not find operation composer on PubliphoneV6 that appears as trigger in its state machine.",
+      "Could not find operation erreurCom on PubliphoneV6 that appears as trigger in its state machine.",
+      "Could not find operation débuterCom on PubliphoneV6 that appears as trigger in its state machine.",
+      "Could not find operation finComCorrespondant on PubliphoneV6 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/RobotV3.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for actor user.",
+      "Class AdminUI of object adminUI not found.",
+      "Class Pilot of object pilot not found.",
+      "Class Robot of object robot not found.",
+      "Class Logger of object logger not found.",
+      "Class RemoteUI of object remoteUI not found.",
+      "No class is specified for actor simulateurRobot.",
+      "Could not find operation goScreenLog on adminUI that appears as trigger in its state machine.",
+      "Could not find operation quit on adminUI that appears as trigger in its state machine.",
+      "Could not find operation backMainScreen on adminUI that appears as trigger in its state machine.",
+      "Could not find operation toggleEmergencyStop on adminUI that appears as trigger in its state machine.",
+      "Could not find operation toggleES on pilot that appears as trigger in its state machine.",
+      "Could not find operation setVelocity on pilot that appears as trigger in its state machine.",
+      "Could not find operation startPolling on logger that appears as trigger in its state machine.",
+      "Could not find operation stopPolling on logger that appears as trigger in its state machine.",
+      "Could not find operation quit on remoteUI that appears as trigger in its state machine.",
+      "Could not find operation validate on remoteUI that appears as trigger in its state machine.",
+      "Could not find operation setIP on remoteUI that appears as trigger in its state machine.",
+      "Could not find operation setDir on remoteUI that appears as trigger in its state machine.",
+      "Could not find operation toggleEmergencyStop on remoteUI that appears as trigger in its state machine.",
+      "Could not find operation toggleES on pilot corresponding to message toggleES sent on connector C1 from adminUI.",
+      "No type is specified for connector C1 between adminUI and pilot.",
+      "Could not find operation startPolling on logger corresponding to message startPolling sent on connector C2 from adminUI.",
+      "Could not find operation stopPolling on logger corresponding to message stopPolling sent on connector C2 from adminUI.",
+      "No type is specified for connector C2 between adminUI and logger.",
+      "Could not find operation setWheelsVelocity on robot corresponding to message setWheelsVelocity sent on connector C3 from pilot.",
+      "No type is specified for connector C3 between pilot and robot.",
+      "Could not find operation signalES on logger corresponding to message signalES sent on connector C4 from pilot.",
+      "No type is specified for connector C4 between pilot and logger.",
+      "No type is specified for connector C5 between robot and logger.",
+      "Could not find operation setVelocity on pilot corresponding to message setVelocity sent on connector C6 from remoteUI.",
+      "Could not find operation toggleES on pilot corresponding to message toggleES sent on connector C6 from remoteUI.",
+      "No type is specified for connector C6 between remoteUI and pilot.",
+      "No type is specified for connector C7 between remoteUI and logger.",
+      "Could not find operation toggleEmergencyStop on adminUI corresponding to message toggleEmergencyStop sent on connector C8 from user.",
+      "Could not find operation quit on adminUI corresponding to message quit sent on connector C8 from user.",
+      "Could not find operation goScreenLog on adminUI corresponding to message goScreenLog sent on connector C8 from user.",
+      "Could not find operation clearlog on adminUI corresponding to message clearlog sent on connector C8 from user.",
+      "Could not find operation backMainScreen on adminUI corresponding to message backMainScreen sent on connector C8 from user.",
+      "Could not find operation displayScreen on user corresponding to message displayScreen sent on connector C8 from adminUI.",
+      "No type is specified for connector C8 between user and adminUI.",
+      "Could not find operation toggleEmergencyStop on remoteUI corresponding to message toggleEmergencyStop sent on connector C9 from user.",
+      "Could not find operation quit on remoteUI corresponding to message quit sent on connector C9 from user.",
+      "Could not find operation goScreenLog on remoteUI corresponding to message goScreenLog sent on connector C9 from user.",
+      "Could not find operation backMainScreen on remoteUI corresponding to message backMainScreen sent on connector C9 from user.",
+      "Could not find operation setDir on remoteUI corresponding to message setDir sent on connector C9 from user.",
+      "Could not find operation setIP on remoteUI corresponding to message setIP sent on connector C9 from user.",
+      "Could not find operation validate on remoteUI corresponding to message validate sent on connector C9 from user.",
+      "Could not find operation displayScreen on user corresponding to message displayScreen sent on connector C9 from remoteUI.",
+      "No type is specified for connector C9 between user and remoteUI.",
+      "No type is specified for connector C10 between robot and simulateurRobot."
+    ]
+  },
+  "samples/SecureScadaSystemExport.js": {
+    "errors": [],
+    "warnings": [
+      "Class SingleAccessPoint of object itsCentralControler_CG_SAP not found.",
+      "Class CheckPoint of object itsCentralControler_CG_checkPoint not found.",
+      "Class User of object itsUser not found.",
+      "Class PLC of object PLC2 not found.",
+      "Class SingleAccessPoint of object aPropulsionSystem_FU_SAP not found.",
+      "Class SecurityManager of object aPropulsionSystem_FU_SM not found.",
+      "Class PLC of object PLC1 not found.",
+      "Class SingleAccessPoint of object itsCommunicationNetwork_CN_SAP not found.",
+      "Class CheckPoint of object itsCommunicationNetwork_CN_CheckPoint not found.",
+      "Class LocalControler of object aMotorControler not found.",
+      "No class is specified for object itsCentralControler_CG_SAP_requestPort.",
+      "No class is specified for object itsCentralControler_CG_SAP_checkRightPort.",
+      "No class is specified for object itsCentralControler_CG_SAP_approvedRequestPort.",
+      "No class is specified for object itsCentralControler_CG_checkPoint_checkPointPort.",
+      "No class is specified for object itsUser_scadaAccess.",
+      "No class is specified for object PLC2_modbus.",
+      "No class is specified for object aPropulsionSystem_FU_SAP_requestPort.",
+      "No class is specified for object aPropulsionSystem_FU_SAP_checkRightPort.",
+      "No class is specified for object aPropulsionSystem_FU_SAP_approvedRequestPort.",
+      "No class is specified for object aPropulsionSystem_FU_SM_securityPort.",
+      "No class is specified for object PLC1_modbus.",
+      "No class is specified for object itsCommunicationNetwork_CN_SAP_requestPort.",
+      "No class is specified for object itsCommunicationNetwork_CN_SAP_checkRightPort.",
+      "No class is specified for object itsCommunicationNetwork_CN_SAP_approvedRequestPort.",
+      "No class is specified for object itsCommunicationNetwork_CN_CheckPoint_checkPointPort.",
+      "No class is specified for object aMotorControler_modbusPLC1Port.",
+      "No class is specified for object aMotorControler_modbusPLC2Port.",
+      "No class is specified for object aMotorControler_FUPort.",
+      "No class is specified for object aPropulsionSystem_lc_port.",
+      "No class is specified for object itsCommunicationNetwork_cgPort.",
+      "No class is specified for object itsCentralControler_securityPort.",
+      "No class is specified for object aPropulsionSystem_networkPort.",
+      "No class is specified for object itsCommunicationNetwork_fuPort.",
+      "No class is specified for object itsCentralControler_connectPort.",
+      "Operation approved on itsCentralControler_CG_SAP has 1 parameters, but trigger approved has 0 argument(s).",
+      "Operation returnRead on itsCentralControler_CG_SAP has 2 parameters, but trigger returnRead has 0 argument(s).",
+      "Operation check on itsCentralControler_CG_checkPoint has 1 parameters, but trigger check has 0 argument(s).",
+      "Operation approved on aPropulsionSystem_FU_SAP has 1 parameters, but trigger approved has 0 argument(s).",
+      "Operation returnRead on aPropulsionSystem_FU_SAP has 2 parameters, but trigger returnRead has 0 argument(s).",
+      "Operation check on aPropulsionSystem_FU_SM has 1 parameters, but trigger check has 0 argument(s).",
+      "Operation approved on itsCommunicationNetwork_CN_SAP has 1 parameters, but trigger approved has 0 argument(s).",
+      "Operation returnRead on itsCommunicationNetwork_CN_SAP has 2 parameters, but trigger returnRead has 0 argument(s).",
+      "Operation check on itsCommunicationNetwork_CN_CheckPoint has 1 parameters, but trigger check has 0 argument(s).",
+      "Operation returnRead on aMotorControler has 2 parameters, but trigger returnRead has 0 argument(s).",
+      "No type is specified for connector aPropulsionSystem_aMotorControler between aMotorControler_FUPort and aPropulsionSystem_lc_port.",
+      "No type is specified for connector aMotorControler_PLC1 between PLC1_modbus and aMotorControler_modbusPLC1Port.",
+      "No type is specified for connector aMotorControler_PLC2 between PLC2_modbus and aMotorControler_modbusPLC2Port.",
+      "No type is specified for connector itsCentralControler_itsCommunicationNetwork between itsCommunicationNetwork_cgPort and itsCentralControler_securityPort.",
+      "No type is specified for connector itsCommunicationNetwork_aPropulsionSystem between aPropulsionSystem_networkPort and itsCommunicationNetwork_fuPort.",
+      "No type is specified for connector itsUser_itsCentralControler between itsCentralControler_connectPort and itsUser_scadaAccess.",
+      "No type is specified for connector itsCentralControler_connectPort_CG_SAP between itsCentralControler_CG_SAP_requestPort and itsCentralControler_connectPort.",
+      "No type is specified for connector itsCentralControler_CG_SAP_CG_checkPoint between itsCentralControler_CG_checkPoint_checkPointPort and itsCentralControler_CG_SAP_checkRightPort.",
+      "No type is specified for connector itsCentralControler_CG_SAP_securityPort between itsCentralControler_securityPort and itsCentralControler_CG_SAP_approvedRequestPort.",
+      "No type is specified for connector aPropulsionSystem_networkPort_FU_SAP between aPropulsionSystem_FU_SAP_requestPort and aPropulsionSystem_networkPort.",
+      "No type is specified for connector aPropulsionSystem_FU_SAP_FU_SM between aPropulsionSystem_FU_SM_securityPort and aPropulsionSystem_FU_SAP_checkRightPort.",
+      "No type is specified for connector aPropulsionSystem_FU_SAP_lc_port between aPropulsionSystem_lc_port and aPropulsionSystem_FU_SAP_approvedRequestPort.",
+      "No type is specified for connector itsCommunicationNetwork_cgPort_CN_SAP between itsCommunicationNetwork_CN_SAP_requestPort and itsCommunicationNetwork_cgPort.",
+      "No type is specified for connector itsCommunicationNetwork_CN_SAP_CN_CheckPoint between itsCommunicationNetwork_CN_CheckPoint_checkPointPort and itsCommunicationNetwork_CN_SAP_checkRightPort.",
+      "No type is specified for connector itsCommunicationNetwork_CN_SAP_fuPort between itsCommunicationNetwork_fuPort and itsCommunicationNetwork_CN_SAP_approvedRequestPort.",
+      "No type is specified for connector itsCentralControler_CG_SAP_owns_itsCentralControler_CG_SAP_requestPort between itsCentralControler_CG_SAP and itsCentralControler_CG_SAP_requestPort.",
+      "No type is specified for connector itsCentralControler_CG_SAP_owns_itsCentralControler_CG_SAP_checkRightPort between itsCentralControler_CG_SAP and itsCentralControler_CG_SAP_checkRightPort.",
+      "No type is specified for connector itsCentralControler_CG_SAP_owns_itsCentralControler_CG_SAP_approvedRequestPort between itsCentralControler_CG_SAP and itsCentralControler_CG_SAP_approvedRequestPort.",
+      "No type is specified for connector itsCentralControler_CG_checkPoint_owns_itsCentralControler_CG_checkPoint_checkPointPort between itsCentralControler_CG_checkPoint and itsCentralControler_CG_checkPoint_checkPointPort.",
+      "No type is specified for connector itsUser_owns_itsUser_scadaAccess between itsUser and itsUser_scadaAccess.",
+      "No type is specified for connector PLC2_owns_PLC2_modbus between PLC2 and PLC2_modbus.",
+      "No type is specified for connector aPropulsionSystem_FU_SAP_owns_aPropulsionSystem_FU_SAP_requestPort between aPropulsionSystem_FU_SAP and aPropulsionSystem_FU_SAP_requestPort.",
+      "No type is specified for connector aPropulsionSystem_FU_SAP_owns_aPropulsionSystem_FU_SAP_checkRightPort between aPropulsionSystem_FU_SAP and aPropulsionSystem_FU_SAP_checkRightPort.",
+      "No type is specified for connector aPropulsionSystem_FU_SAP_owns_aPropulsionSystem_FU_SAP_approvedRequestPort between aPropulsionSystem_FU_SAP and aPropulsionSystem_FU_SAP_approvedRequestPort.",
+      "No type is specified for connector aPropulsionSystem_FU_SM_owns_aPropulsionSystem_FU_SM_securityPort between aPropulsionSystem_FU_SM and aPropulsionSystem_FU_SM_securityPort.",
+      "No type is specified for connector PLC1_owns_PLC1_modbus between PLC1 and PLC1_modbus.",
+      "No type is specified for connector itsCommunicationNetwork_CN_SAP_owns_itsCommunicationNetwork_CN_SAP_requestPort between itsCommunicationNetwork_CN_SAP and itsCommunicationNetwork_CN_SAP_requestPort.",
+      "No type is specified for connector itsCommunicationNetwork_CN_SAP_owns_itsCommunicationNetwork_CN_SAP_checkRightPort between itsCommunicationNetwork_CN_SAP and itsCommunicationNetwork_CN_SAP_checkRightPort.",
+      "No type is specified for connector itsCommunicationNetwork_CN_SAP_owns_itsCommunicationNetwork_CN_SAP_approvedRequestPort between itsCommunicationNetwork_CN_SAP and itsCommunicationNetwork_CN_SAP_approvedRequestPort.",
+      "No type is specified for connector itsCommunicationNetwork_CN_CheckPoint_owns_itsCommunicationNetwork_CN_CheckPoint_checkPointPort between itsCommunicationNetwork_CN_CheckPoint and itsCommunicationNetwork_CN_CheckPoint_checkPointPort.",
+      "No type is specified for connector aMotorControler_owns_aMotorControler_modbusPLC1Port between aMotorControler and aMotorControler_modbusPLC1Port.",
+      "No type is specified for connector aMotorControler_owns_aMotorControler_modbusPLC2Port between aMotorControler and aMotorControler_modbusPLC2Port.",
+      "No type is specified for connector aMotorControler_owns_aMotorControler_FUPort between aMotorControler and aMotorControler_FUPort."
+    ]
+  },
+  "samples/ShallowHistoryTest.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object ShallowHistoryTest."
+    ]
+  },
+  "samples/SimpleCruiseControl.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for actor speedSensor.",
+      "No class is specified for actor user.",
+      "No class is specified for object controller.",
+      "No type is specified for connector speedSensor2controller between speedSensor and controller.",
+      "No type is specified for connector user2controller between user and controller."
+    ]
+  },
+  "samples/SynchronousCommunicationExample.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object caller.",
+      "No class is specified for object callee.",
+      "No type is specified for connector C1 between caller and callee."
+    ]
+  },
+  "samples/ThermostatV1.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object ThermostatV1.",
+      "Could not find operation appuieStop on ThermostatV1 that appears as trigger in its state machine.",
+      "Could not find operation appuieInc on ThermostatV1 that appears as trigger in its state machine.",
+      "Could not find operation appuieDec on ThermostatV1 that appears as trigger in its state machine.",
+      "Could not find operation appuieMarche on ThermostatV1 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/ThermostatV2.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object ThermostatV2.",
+      "Could not find operation appuieStop on ThermostatV2 that appears as trigger in its state machine.",
+      "Could not find operation appuieMarche on ThermostatV2 that appears as trigger in its state machine.",
+      "Could not find operation appuieInc on ThermostatV2 that appears as trigger in its state machine.",
+      "Could not find operation appuieDec on ThermostatV2 that appears as trigger in its state machine."
+    ]
+  },
+  "samples/WebotsDemo.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object remote."
+    ]
+  },
+  "samples/WebotsDemo2.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object remote.",
+      "Could not find operation setEvents on remote that appears as trigger in its state machine."
+    ]
+  },
+  "samples/WebotsTests.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object remote.",
+      "No class is specified for object webots.",
+      "Could not find operation setDisconnected on remote that appears as trigger in its state machine.",
+      "Could not find operation setConnected on remote that appears as trigger in its state machine.",
+      "No type is specified for connector C1 between remote and webots."
+    ]
+  },
+  "samples/RobotModel.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for actor user.",
+      "Class AdminUI of object adminUI not found.",
+      "Class Pilot of object pilot not found.",
+      "Class Robot of object robot not found.",
+      "No class is specified for actor simulateurRobot.",
+      "No class is specified for object copilot.",
+      "Could not find operation goManuMode on adminUI that appears as trigger in its state machine.",
+      "Could not find operation goAutoMode on adminUI that appears as trigger in its state machine.",
+      "Could not find operation quit on adminUI that appears as trigger in its state machine.",
+      "Could not find operation backMainScreen on adminUI that appears as trigger in its state machine.",
+      "Could not find operation SignalEndTrip on adminUI that appears as trigger in its state machine.",
+      "Could not find operation ToggleEmergencyStop on adminUI that appears as trigger in its state machine.",
+      "Could not find operation choiceTrip on adminUI that appears as trigger in its state machine.",
+      "Could not find operation SignalNewStep on adminUI that appears as trigger in its state machine.",
+      "Could not find operation newDir on adminUI that appears as trigger in its state machine.",
+      "Could not find operation toggleES on pilot that appears as trigger in its state machine.",
+      "Could not find operation setVelocity on pilot that appears as trigger in its state machine.",
+      "Operation setObs on pilot is private but appears as trigger in its state machine.",
+      "Operation sendMvt on pilot is private but appears as trigger in its state machine.",
+      "Could not find operation setTrip on copilot that appears as trigger in its state machine.",
+      "Could not find operation SignalBlocked on copilot that appears as trigger in its state machine.",
+      "Could not find operation toggleES on pilot corresponding to message toggleES sent on connector C1 from adminUI.",
+      "Could not find operation setVelocity on pilot corresponding to message setVelocity sent on connector C1 from adminUI.",
+      "No type is specified for connector C1 between adminUI and pilot.",
+      "Could not find operation SignalBlocked on copilot corresponding to message SignalBlocked sent on connector C2 from pilot.",
+      "Could not find operation SetVelocity on pilot corresponding to message SetVelocity sent on connector C2 from copilot.",
+      "No type is specified for connector C2 between pilot and copilot.",
+      "Could not find operation setTrip on copilot corresponding to message setTrip sent on connector C3 from adminUI.",
+      "Could not find operation goAutoMode on copilot corresponding to message goAutoMode sent on connector C3 from adminUI.",
+      "Could not find operation SignalNewStep on adminUI corresponding to message SignalNewStep sent on connector C3 from copilot.",
+      "Could not find operation SignalEndTrip on adminUI corresponding to message SignalEndTrip sent on connector C3 from copilot.",
+      "No type is specified for connector C3 between adminUI and copilot.",
+      "Could not find operation setVelocity on robot corresponding to message setVelocity sent on connector C4 from pilot.",
+      "Operation setObs on pilot is private but appears in message setObs(dist) sent on connector C4 from robot.",
+      "No type is specified for connector C4 between pilot and robot.",
+      "Could not find operation quit on adminUI corresponding to message quit sent on connector C8 from user.",
+      "Could not find operation goAutoMode on adminUI corresponding to message goAutoMode sent on connector C8 from user.",
+      "Could not find operation goManuMode on adminUI corresponding to message goManuMode sent on connector C8 from user.",
+      "Could not find operation backMainScreen on adminUI corresponding to message backMainScreen sent on connector C8 from user.",
+      "Could not find operation choiceTrip on adminUI corresponding to message choiceTrip sent on connector C8 from user.",
+      "Could not find operation newDir on adminUI corresponding to message newDir sent on connector C8 from user.",
+      "Could not find operation ToggleEmergencyStop on adminUI corresponding to message ToggleEmergencyStop sent on connector C8 from user.",
+      "Could not find operation displayScreen on user corresponding to message displayScreen sent on connector C8 from adminUI.",
+      "Could not find operation displayTrips on user corresponding to message displayTrips sent on connector C8 from adminUI.",
+      "No type is specified for connector C8 between user and adminUI.",
+      "No type is specified for connector C10 between robot and simulateurRobot."
+    ]
+  },
+  "samples/tUMLOutput.js": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for object clock.",
+      "No class is specified for object timer.",
+      "No class is specified for object user.",
+      "No type is specified for connector c1 between clock and timer.",
+      "No type is specified for connector c2 between timer and user."
+    ]
+  },
+  "ConceptionOVNI.md": {
+    "errors": [],
+    "warnings": [
+      "No class is specified for actor vapoteur.",
+      "No class is specified for actor E_Switch.",
+      "Class Brain of active object brain is not active.",
+      "Could not find operation brainLock on brain that appears as trigger in its state machine.",
+      "Could not find operation joystickHasMoved on brain that appears as trigger in its state machine.",
+      "Class Switch of active object switch is not active.",
+      "Class Heater of active object heater is not active.",
+      "Class Speaker of active object speaker is not active.",
+      "No type is specified for connector C01 between vapoteur and brain.",
+      "No type is specified for connector C02 between E_Switch and switch.",
+      "No type is specified for connector C1 between joystick and brain.",
+      "No type is specified for connector C2 between switch and brain.",
+      "No type is specified for connector C3 between brain and heater.",
+      "No type is specified for connector C4 between brain and speaker.",
+      "No type is specified for connector C5 between brain and battery.",
+      "No type is specified for connector C6 between speaker and interpret.",
+      "No type is specified for connector C7 between battery and multimeter.",
+      "No type is specified for connector C8 between heater and multimeter.",
+      "No type is specified for connector C9 between speaker and lcd.",
+      "No type is specified for connector C10 between switch and led.",
+      "Could not find operation unlock on brain that appears as message in interaction \"Vapoter en sécurité avec assistance\".",
+      "Could not find operation lock on brain that appears as message in interaction \"Vapoter en sécurité avec assistance\".",
+      "Could not find object undefined that first appears as message source in interaction \"Démarrer\".",
+      "Could not find operation initHeater on heater that appears as message in interaction \"Démarrer\".",
+      "Could not find operation lightScreen on speaker that appears as message in interaction \"Démarrer\".",
+      "Could not find operation lock on brain that appears as message in interaction \"Démarrer\".",
+      "Could not find operation Prendre informations pour la ieme ligne on speaker that appears as message in interaction \"Afficher un écran\".",
+      "Could not find operation getSymbol on interpret that appears as message in interaction \"Afficher un écran\".",
+      "Could not find operation fabrique la ligne à afficher on speaker that appears as message in interaction \"Afficher un écran\".",
+      "Could not find operation writeLine on lcd that appears as message in interaction \"Afficher un écran\".",
+      "Could not find operation startPWM on heater that appears as message in interaction \"Démarrer le vapotage\".",
+      "Could not find operation stopPWM on heater that appears as message in interaction \"Démarrer le vapotage\".",
+      "Could not find object E_Joystick that first appears as message source in interaction \"Régler la consigne de régulation\".",
+      "Could not find operation storePowerValue on speaker that appears as message in interaction \"Régler la consigne de régulation\"."
+    ]
+  },
+  "test/samples/WarningTest/WarningTest.js": {
+    "errors": [
+      "Found 2 objects with the same name: \"b\"."
+    ],
+    "warnings": [
+      "Association with enumerations like A2E between A and E should not exist. Declare an attribute instead.",
+      "Class B of object b not found.",
+      "No class is specified for object c.",
+      "Property p1 of object a is also declared on its class.",
+      "Property p2 of object a should rather be defined on its class.",
+      "Operation onButton of object a is also declared on its class.",
+      "Operation offButton of object a should rather be defined on its class.",
+      "Operation test of object a should rather be defined on its class.",
+      "Class A of active object a is not active.",
+      "Could not parse label \"unparsable label\" of transition a.UNPARSABLE from a.On to a.c in a's state machine.",
+      "No guard after choice on transition a.NOGUARD from a.c to a.On in a's state machine.",
+      "Operation onButton on a has 0 parameters, but trigger onButton(a) has 1 argument(s).",
+      "Could not find operation undeclaredOp on a that appears as trigger in its state machine.",
+      "Operation offButton on a is private but appears as trigger in its state machine.",
+      "Argument \"a:b\" of trigger test(a:b) on a is not a valid identifier.",
+      "Operation offButton on a is private but appears in message offButton sent on connector C1 from b.",
+      "Could not find operation nonExistingOp on a corresponding to message nonExistingOp(test) sent on connector C1 from b.",
+      "Could not parse message \"\" on connector C1 from b to a.",
+      "No type is specified for connector C1 between b and a.",
+      "Operation offButton on a is private but appears as a non-self message from b in interaction \"test\".",
+      "Could not find operation undeclaredOp on a that appears as message in interaction \"test\".",
+      "Could not find object z that first appears as message target in interaction \"test\".",
+      "Could not find object y that first appears as message source in interaction \"test\"."
+    ]
+  }
+}
+

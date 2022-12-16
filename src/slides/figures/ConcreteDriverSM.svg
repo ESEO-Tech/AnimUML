@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="649px" preserveAspectRatio="none" style="width:934px;height:649px;" version="1.1" viewBox="0 0 934 649" width="934px" zoomAndPan="magnify"><defs><filter height="300%" id="f4qsmcfv45sb7" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><polygon fill="#FEFECE" filter="url(#f4qsmcfv45sb7)" points="460.661,8,472.661,20,460.661,32,448.661,20,460.661,8" style="stroke: #A80036; stroke-width: 1.5;"/><polygon fill="#FEFECE" filter="url(#f4qsmcfv45sb7)" points="204.661,601,216.661,613,204.661,625,192.661,613,204.661,601" style="stroke: #A80036; stroke-width: 1.5;"/><ellipse cx="765.661" cy="20" fill="#000000" filter="url(#f4qsmcfv45sb7)" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><rect fill="#FEFECE" filter="url(#f4qsmcfv45sb7)" height="50.2656" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="180" x="662.661" y="169"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="662.661" x2="842.661" y1="195.2969" y2="195.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="24" x="740.661" y="186.9951">Idle</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="160" x="667.661" y="211.4355">entry/this.packetSize = 0;</text><rect fill="#FEFECE" filter="url(#f4qsmcfv45sb7)" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="78" x="661.661" y="371"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="661.661" x2="739.661" y1="397.2969" y2="397.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="58" x="671.661" y="388.9951">WaitSize</text><rect fill="#FEFECE" filter="url(#f4qsmcfv45sb7)" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="151" x="528.161" y="588"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="528.161" x2="679.161" y1="614.2969" y2="614.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="131" x="538.161" y="605.9951">WaitPacketNumber</text><rect fill="#FEFECE" filter="url(#f4qsmcfv45sb7)" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="125" x="101.1606" y="169"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="101.1606" x2="226.1606" y1="195.2969" y2="195.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="105" x="111.1606" y="186.9951">WaitPacketSize</text><rect fill="#FEFECE" filter="url(#f4qsmcfv45sb7)" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="107" x="104.1606" y="371"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="104.1606" x2="211.1606" y1="397.2969" y2="397.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="87" x="114.1606" y="388.9951">ReceiveData</text><!--link *start to driver.Idle--><path d="M764.962,30.247 C763.084,55.089 757.87,124.075 754.867,163.803 " fill="none" id="*start-driver.Idle" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="754.477,168.971,759.1445,160.2984,754.8541,163.9852,751.1673,159.6949,754.477,168.971" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="157" x="762.661" y="105.0669">/this.packetNumber = 0;</text><!--link driver.Idle to driver.WaitSize--><path d="M746.388,219.125 C736.823,255.914 718.616,325.94 708.296,365.633 " fill="none" id="driver.Idle-driver.WaitSize" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="706.955,370.79,713.0918,363.0868,708.2137,365.951,705.3494,361.0729,706.955,370.79" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="169" x="737.661" y="262.0669">after(10ms)[EP_IS_EMPTY(</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="93" x="775.661" y="277.1997">memoryBlock)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="115" x="764.661" y="292.3325">&amp;&amp; !IS_IN_STATE(</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="92" x="776.161" y="307.4653">memoryBlock,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="137" x="753.661" y="322.5981">memoryBlock.Error)]/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="112" x="766.161" y="337.731">device.askData();</text><!--link driver.WaitSize to driver.WaitPacketNumber--><path d="M689.722,421.245 C671.736,461.111 635.992,540.3366 616.713,583.0695 " fill="none" id="driver.WaitSize-driver.WaitPacketNumber" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="614.559,587.8433,621.9059,581.2841,616.6149,583.2855,614.6134,577.9946,614.559,587.8433" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="248" x="674.661" y="501.5669">write(byte)/memoryBlock.malloc(byte);</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="94" x="751.661" y="516.6997">this.offset = 0;</text><!--link driver.WaitPacketNumber to driver.choice1--><path d="M598.15,587.7476 C584.844,529.35 549.76,376.326 518.661,249 C498.883,168.025 473.778,71.257 464.409,35.338 " fill="none" id="driver.WaitPacketNumber-driver.choice1" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="463.044,30.107,461.4465,39.8254,464.3067,34.9449,469.1872,37.8051,463.044,30.107" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="73" x="581.661" y="269.5669">write(byte)[</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="88" x="574.161" y="284.6997">EP_IS_EMPTY(</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="102" x="567.161" y="299.8325">memoryBlock)]/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="137" x="557.661" y="314.9653">this.packetNumber =</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="32" x="602.161" y="330.0981">byte;</text><!--link driver.choice1 to driver.Idle--><path d="M470.193,22.538 C491.12,26.284 541.975,37.43 576.661,62 C612.514,87.397 604.157,111.797 638.661,139 C652.22,149.69 668.24,158.918 683.92,166.57 " fill="none" id="driver.choice1-driver.Idle" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="688.772,168.894,682.3827,161.3989,684.2625,166.7342,678.9271,168.614,688.772,168.894" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="40" x="673.661" y="75.0669">[else]/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="77" x="663.161" y="90.1997">console.log(</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="98" x="644.661" y="105.3325">'process data');</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="92" x="655.661" y="120.4653">memoryBlock.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="39" x="674.161" y="135.5981">free();</text><!--link driver.choice1 to driver.WaitPacketSize--><path d="M449.312,20.865 C401.222,20.547 214.968,21.95 176.661,62 C151.049,88.776 152.663,134.176 157.291,163.873 " fill="none" id="driver.choice1-driver.WaitPacketSize" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="158.119,168.862,160.5886,159.3278,157.2989,163.9297,152.6969,160.64,158.119,168.862" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="159" x="177.661" y="105.0669">[this.packetNumber &gt; 0]</text><!--link driver.WaitPacketSize to driver.ReceiveData--><path d="M158.772,219.086 C157.114,228.39 155.476,239.149 154.661,249 C151.324,289.317 153.312,336.098 155.284,365.62 " fill="none" id="driver.WaitPacketSize-driver.ReceiveData" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="155.651,370.926,159.0218,361.672,155.3067,365.9379,151.0408,362.2228,155.651,370.926" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="161" x="157.161" y="284.5669">write(byte)[EP_IS_EMPTY(</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="102" x="186.661" y="299.6997">memoryBlock)]/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="148" x="171.661" y="314.8325">this.packetSize = byte;</text><!--link driver.ReceiveData to driver.choice--><path d="M103.9645,404.707 C75.9067,411.759 43.9027,425.243 26.6606,451 C0.2064,490.518 -1.6678,519.803 26.6606,558 C64.9812,609.6705 151.443,613.6244 187.922,612.8355 " fill="none" id="driver.ReceiveData-driver.choice" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="192.93,612.6897,183.8173,608.9537,187.9321,612.8354,184.0504,616.9503,192.93,612.6897" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="73" x="57.6606" y="464.0669">write(byte)[</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="88" x="50.1606" y="479.1997">EP_IS_EMPTY(</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="102" x="43.1606" y="494.3325">memoryBlock)]/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="117" x="43.6606" y="509.4653">memoryBlock.set(</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="81" x="53.6606" y="524.5981">offset, byte);</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="89" x="57.6606" y="539.731">this.offset++;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="111" x="38.6606" y="554.8638">this.packetSize--;</text><!--link driver.choice to driver.ReceiveData--><path d="M202.684,602.9588 C196.114,572.9042 174.812,475.46 164.033,426.151 " fill="none" id="driver.choice-driver.ReceiveData" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="162.961,421.245,160.9769,430.8919,164.0296,426.1295,168.7921,429.1822,162.961,421.245" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="134" x="193.661" y="509.0669">[this.packetSize &gt; 0]</text><!--link driver.choice to driver.choice1--><path d="M215.136,611.2966 C240.857,608.9488 307.166,599.0049 336.661,558 C417.021,446.279 323.107,382.468 356.661,249 C378.802,160.927 433.978,64.898 453.598,32.44 " fill="none" id="driver.choice-driver.choice1" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="456.227,28.121,448.1299,33.7278,453.6266,32.3916,454.9628,37.8884,456.227,28.121" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="40" x="413.661" y="292.0669">[else]/</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="136" x="373.661" y="307.1997">this.packetNumber--;</text><!--
+@startuml
+		
+
+			
+			
+						state driver.choice1 <<choice>>
+						
+						state driver.choice <<choice>>
+						
+						driver.Idle : entry/this.packetSize = 0;
+						
+						
+						
+						state "Idle" as driver.Idle  {
+							
+			
+			
+		
+						}
+						
+						
+						
+						
+						
+						state "WaitSize" as driver.WaitSize  {
+							
+			
+			
+		
+						}
+						
+						
+						
+						
+						
+						state "WaitPacketNumber" as driver.WaitPacketNumber  {
+							
+			
+			
+		
+						}
+						
+						
+						
+						
+						
+						state "WaitPacketSize" as driver.WaitPacketSize  {
+							
+			
+			
+		
+						}
+						
+						
+						
+						
+						
+						state "ReceiveData" as driver.ReceiveData  {
+							
+			
+			
+		
+						}
+						
+			
+				[*] - -> driver.Idle : /this.packetNumber = 0;
+				driver.Idle - -> driver.WaitSize : after(10ms)[EP_IS_EMPTY(\nmemoryBlock)\n&& !IS_IN_STATE(\nmemoryBlock,\nmemoryBlock.Error)]/\ndevice.askData();
+				driver.WaitSize - -> driver.WaitPacketNumber : write(byte)/memoryBlock.malloc(byte);\nthis.offset = 0;
+				driver.WaitPacketNumber - -> driver.choice1 : write(byte)[\nEP_IS_EMPTY(\nmemoryBlock)]/\n    this.packetNumber =\nbyte;
+				driver.choice1 - -> driver.Idle : [else]/\n    console.log(\n'process data');\n    memoryBlock.\nfree();
+				driver.choice1 - -> driver.WaitPacketSize : [this.packetNumber > 0]
+				driver.WaitPacketSize - -> driver.ReceiveData : write(byte)[EP_IS_EMPTY(\nmemoryBlock)]/\n    this.packetSize = byte;
+				driver.ReceiveData - -> driver.choice : write(byte)[\nEP_IS_EMPTY(\nmemoryBlock)]/\n    memoryBlock.set(\noffset, byte);\n    this.offset++;\nthis.packetSize- -;
+				driver.choice - -> driver.ReceiveData : [this.packetSize > 0]
+				driver.choice - -> driver.choice1 : [else]/\n    this.packetNumber- -;
+		
+@enduml
+
+PlantUML version 1.2019.03(Sun Mar 10 12:04:44 CET 2019)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 1.8.0_265-8u265-b01-0ubuntu2~16.04-b01
+Operating System: Linux
+OS Version: 4.4.0-186-generic
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>

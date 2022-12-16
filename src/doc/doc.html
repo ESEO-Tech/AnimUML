@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+
+<!--
+		<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+
+		<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
+-->
+		<script defer src="../lib/marked.min.js"></script>
+		<script defer src="../lib/prism.min.js"></script>
+		<script type="module" src="../lib/zero-md.min.js"></script>
+
+		<script>
+			function get(id) {
+				return document.getElementById('contents').shadowRoot.getElementById(id).contentWindow;
+			}
+		</script>
+	</head>
+	<body>
+		<zero-md id="contents" src="doc.md"
+			css-urls='["../lib/prism.min.css", "../lib/github-markdown.min.css"]'
+		/>
+	</body>
+</html>

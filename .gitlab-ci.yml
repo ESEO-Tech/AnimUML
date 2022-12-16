@@ -1,0 +1,137 @@
+# This file is a template, and might need editing before it works on your project.
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+image: node:16.10
+
+variables:
+  PLANTUML_URL: 'plantuml-server:8080'
+  OBP_WEBSOCKET_SERVER_URL: 'obp2ws-runtime:8090'
+  BASE_URL: 'plantuml'
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ee/ci/yaml/README.html#cache
+cache:
+  paths:
+    - src/node_modules/
+
+stages:
+  - test
+  - reporting
+  - deploy
+
+
+# starting this one first because it is the longest running as of 20201214
+otherTests:
+  services:
+    - name: registry.kher.nl/tlc/plantuml-server:latest
+      alias: plantuml-server
+    - name: registry.kher.nl/fjouault/obp2runtime-animuml:latest
+      alias: obp2ws-runtime
+  stage: test
+  script:
+    - cd src
+    - npm install
+    - npm run testWithPersistentCoverage -- --grep "ComparedExecution|Explorations|ExplicitStateMachines|Observers.*EMI" --invert
+    - mv .nyc_output/ "$CI_JOB_NAME"
+  artifacts:
+    when: always
+    paths:
+      - src/otherTests/
+    reports:
+      junit: src/test-results.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: src/coverage/cobertura-coverage.xml
+
+ComparedExecution:
+  services:
+    - name: registry.kher.nl/fjouault/obp2runtime-animuml:latest
+      alias: obp2ws-runtime
+  stage: test
+  script:
+    - cd src
+    - npm install
+    - npm run testWithPersistentCoverage -- --grep ComparedExecution
+    - mv .nyc_output/ "$CI_JOB_NAME"
+  artifacts:
+    when: always
+    paths:
+      - src/ComparedExecution/
+    reports:
+      junit: src/test-results.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: src/coverage/cobertura-coverage.xml
+
+Explorations:
+  services:
+    - name: registry.kher.nl/fjouault/obp2runtime-animuml:latest
+      alias: obp2ws-runtime
+  stage: test
+  script:
+    - cd src
+    - npm install
+    - npm run testWithPersistentCoverage -- --grep Explorations
+    - mv .nyc_output/ "$CI_JOB_NAME"
+  artifacts:
+    when: always
+    paths:
+      - src/Explorations/
+    reports:
+      junit: src/test-results.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: src/coverage/cobertura-coverage.xml
+
+ExplicitStateMachines:
+  services:
+    - name: registry.kher.nl/fjouault/obp2runtime-animuml:latest
+      alias: obp2ws-runtime
+  stage: test
+  script:
+    - cd src
+    - npm install
+    - npm run testWithPersistentCoverage -- --grep ExplicitStateMachines
+    - mv .nyc_output/ "$CI_JOB_NAME"
+  artifacts:
+    when: always
+    paths:
+      - src/ExplicitStateMachines/
+    reports:
+      junit: src/test-results.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: src/coverage/cobertura-coverage.xml
+
+generate-reporting:
+  stage: reporting
+  dependencies:
+    - otherTests
+    - ComparedExecution
+    - Explorations
+    - ExplicitStateMachines
+  script:
+    - cd src
+    - npm run nyc-merge -- otherTests .nyc_output/otherTests.json
+    - npm run nyc-merge -- ComparedExecution .nyc_output/ComparedExecution.json
+    - npm run nyc-merge -- Explorations .nyc_output/Explorations.json
+    - npm run nyc-merge -- ExplicitStateMachines .nyc_output/ExplicitStateMachines.json
+    - npm run nyc-report -- --reporter=text --reporter=html
+    - mv coverage ../coverage
+  artifacts:
+    paths:
+      - coverage
+
+pages:
+  stage: deploy
+  dependencies:
+    - generate-reporting
+  script:
+    - rm -rf public
+    - mv coverage public
+  artifacts:
+    paths:
+      - public
+  only: 
+    - master
+

@@ -1,0 +1,16 @@
+/.nyc_output/
+/node_modules/
+/package-lock.json
+/AnimUML.min.js*
+/samples.json/
+/tcsvg/TCSVG.cat.js
+/testDiagram*.svg
+.swm
+.swl
+.swn
+/.env
+/*.md.cs
+/*.md.tar
+/*.md.tuml
+/localtests/
+/AnimUMLUtils.min.js.LICENSE.txt

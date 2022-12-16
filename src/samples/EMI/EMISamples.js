@@ -1,0 +1,12 @@
+loadSample('samples/EMI/TimerModel.js');
+loadSample('samples/EMI/CruiseControl1.js');
+loadSample('samples/EMI/AliceBobPeterson.js');
+loadSample('samples/EMI/AliceBob1.js');
+loadSample('samples/EMI/AliceBob2.js');
+loadSample('samples/EMI/LevelCrossing.js');
+loadSample('samples/EMI/TestIO.js');
+loadSample('samples/EMI/TrafficLight.js');
+loadSample('samples/EMI/SyncComposition.js');
+loadSample('samples/EMI/AtmUser.js');
+loadSample('samples/EMI/ChallengeMain.js');
+loadSample('samples/EMI/CruiseControlv4.js');

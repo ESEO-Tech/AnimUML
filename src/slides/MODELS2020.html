@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Designing, Animating, and Verifying Partial UML Models</title>
+    <script>
+	if(document.location.protocol === "file:") {
+		document.write(`
+		    <base href='https://animuml.kher.nl/'/>
+		`);
+	}
+    </script>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+	iframe {
+		border: none;
+	}
+	.remark-slide-content {
+		font-size: 24px;
+		padding: .5em 2em .5em 2em;
+	}
+	.bigger ul,.bigger ol {
+		font-size: 32px;
+	}
+	.hiddenlink * {
+		text-decoration: none;
+		color: black;
+	}
+	a {
+		color: blue;
+		text-decoration: underline;
+	}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+layout: true
+
+<div style="text-align: center;position: absolute; bottom: 15px; width: 85%; font-size: 24px">
+.hiddenlink[[MODELS 2020](http://modelsconference.org/)] — 
+Virtual Event — 
+October 16-23,
+2020</div>
+
+---
+class: center, middle
+
+# .hiddenlink[[Designing, Animating, and Verifying Partial UML Models](https://conf.researchr.org/details/models-2020/models-2020-technical-track/35/Designing-Animating-and-Verifying-Partial-UML-Models)]
+
+### Frédéric Jouault<sup>1</sup>, Valentin Besnard<sup>1</sup>, Théo Le Calvar<sup>2</sup>,
+### Ciprian Teodorov<sup>3</sup>, Matthias Brun<sup>1</sup>, and Jerome Delatour<sup>1</sup>
+
+<sup>1</sup>ERIS, ESEO-TECH,
+Angers, France,
+*firstname*.*lastname*@eseo.fr
+
+<sup>2</sup>LERIA, Université d’Angers,
+Angers, France,
+*firstname*.*lastname*@univ-angers.fr
+
+<sup>3</sup>Lab-STICC UMR CNRS 6285, ENSTA Bretagne,
+Brest, France,
+
+*firstname*.*lastname*@ensta-bretagne.fr
+
+
+<!--
+[Conference talk metadata](https://conf.researchr.org/details/models-2020/models-2020-technical-track/35/Designing-Animating-and-Verifying-Partial-UML-Models)
+-->
+
+---
+exclude: true
+
+# Agenda
+
+1. Introduction
+2. Deep-dive
+3. ...
+
+---
+class: bigger
+
+# Context and Problem
+
+* Early model validation is useful to fix design mistakes before they become costly
+--
+count: false
+* This requires models to be executable in some way
+	* In particular, a significant subset of UML has a standardized precise execution semantics (with [fUML](https://www.omg.org/spec/FUML), [PSCS](https://www.omg.org/spec/PSCS), and [PSSM](https://www.omg.org/spec/PSSM))
+--
+count: false
+* However, most existing approaches typically only work with relatively consistent and complete models
+	* Reaching this level of consistency and completeness is generally hard
+--
+count: false
+* How could we help modelers with their inconsistent and incomplete models?
+
+<!--
+count: false
+* Multiple model validation techniques are available to simulate, test, and verify models
+-->
+
+---
+class: bigger
+exclude: true
+
+# Approach Guidelines
+
+1. Models should be **executable as early as possible** during the design process.
+--
+count: false
+exclude: true
+2. Model producers and consumers should be **assisted in understanding execution**.
+	* Instead of only relying on, typically inconsistent, mental simulations.
+	* This should also help designers and developers reach a common understanding.
+--
+count: false
+exclude: true
+3. Designers should be able to **control execution**.
+	* To discover, avoid, and later fix unintended partial models' unwanted execution paths.
+
+---
+class: bigger
+
+# Approach Overview
+
+<!--
+it possible to incrementally improve testable models
+-->
+
+* Objectives
+	* Making models **executable as early as possible**
+	* Instead of only relying on typically inconsistent mental simulations
+--
+count: false
+* Means: making partial models executable by **relaxing modeling language compliance**
+--
+count: false
+* Rationale
+	* Makes it possible to **incrementally improve testable models**
+		* Until they become complete and consistent (standard compliant, verifiable)
+	* While providing designers with **tool support** during the whole process
+--
+count: false
+* Coming next: application to UML
+
+---
+
+# Relaxation Point: Instances Before Classifiers
+
+<iframe id="ex2"
+	width="100%"
+	height="500"
+	src='../AnimUML.html#{
+	"name": "Test",
+	"stateByName": {
+		"init": {"kind": "initial"}
+	},
+	"historyCauses": ["operation:lamp.onButton:button", "operation:bulb.turnOn:lamp"],
+	"settings": {
+		"display": {
+			"showEventPools": false,
+			"hideStateMachines": true,
+			"hideLinks": true
+		},
+		"interface": {
+			"mainWidth": "30%25",
+			"histWidth": "70%25",
+			"iframe": "ex2",
+			"load": "ButtonLampBulb",
+			"disableExperimental": true,
+			"disableModelSelection": true,
+			"disableObjectSelection": true,
+			"disableDoc": true,
+			"disableSettings": true,
+			"disableReset": true,
+			"disableSwitchDiagram": true,
+			"disableExports": true,
+			"disableHistorySettings": true,
+			"disableInteractionSelection": true,
+			"disableEdit": true
+		},
+		"semantics": {
+			"checkEvents": false
+		},
+		"overrides": {
+			"connectorByName.C1.possibleMessages": [],
+			"connectorByName.C2.possibleMessages": []
+		}
+	}
+}'>
+
+---
+
+# Making it Easier by Borrowing from Communication Diagrams
+
+<div style="position: absolute; right: 10%; top: 20%">
+.bigger[
+(and showing [clickable](javascript:alert("You may want to click on diagram elements, not on this link style example."%29) elements)
+]
+</div>
+
+<iframe id="ex2.2"
+	width="100%"
+	height="500"
+	src='../AnimUML.html#{
+	"name": "Test",
+	"stateByName": {
+		"init": {"kind": "initial"}
+	},
+	"settings": {
+		"display": {
+			"showEventPools": false,
+			"hideStateMachines": true
+		},
+		"interface": {
+			"mainWidth": "30%25",
+			"histWidth": "70%25",
+			"iframe": "ex2.2",
+			"load": "ButtonLampBulb",
+			"disableExperimental": true,
+			"disableModelSelection": true,
+			"disableObjectSelection": true,
+			"disableDoc": true,
+			"disableSettings": true,
+			"disableReset": true,
+			"disableSwitchDiagram": true,
+			"disableExports": true,
+			"disableHistorySettings": true,
+			"hideEmptyHistory": true,
+			"disableInteractionSelection": true,
+			"disableEdit": true
+		},
+		"semantics": {
+			"checkEvents": false
+		}
+	}
+}'>
+
+---
+
+# More Relaxation Points
+
+* Receiving undeclared messages
+* Time triggers may always match
+
+<iframe id="ex0" width="120%" height="480" src='../AnimUML.html#{
+	"name": "Test",
+	"stateByName": {
+		"init": {"kind": "initial"}
+	},
+	"historyCauses": [
+		"transition:lamp.tOFFON"
+	],
+	"settings": {
+		"display": {
+		},
+		"interface": {
+			"iframe": "ex0",
+			"load": "Lamp",
+			"disableExperimental": true,
+			"disableModelSelection": true,
+			"disableObjectSelection": true,
+			"disableDoc": true,
+			"disableExports": true,
+			"disableHistorySettings": true,
+			"disableReset": true,
+			"disableSwitchDiagram": true,
+			"disableSettings": true,
+			"disableEdit": true,
+			"disableInteractionSelection": true,
+			"hideHistory": true
+		},
+		"semantics": {
+			"fireInitialTransitions": true
+		}
+	}
+}'>
+
+---
+
+# Relaxation Point: Message Triggers May Find Messages
+
+<!--
+DONE:
+* add historyCauses so that we do not start from nothing (for "wow effect")
+* hid all interface elements for "wow effect"
+		"transition:lamp.tONOFF"
+-->
+
+<iframe id="ex1" width="120%" height="480" src='../AnimUML.html#{
+	"name": "Test",
+	"stateByName": {
+		"init": {"kind": "initial"}
+	},
+	"historyCauses": [
+		"transition:lamp.tOFFON",
+		"transition:lamp.tONOFF"
+	],
+	"settings": {
+		"display": {
+		},
+		"interface": {
+			"iframe": "ex1",
+			"load": "Lamp",
+			"disableExperimental": true,
+			"disableModelSelection": true,
+			"disableObjectSelection": true,
+			"disableDoc": true,
+			"disableExports": true,
+			"disableHistorySettings": true,
+			"disableReset": true,
+			"disableSwitchDiagram": true,
+			"disableSettings": true,
+			"disableInteractionSelection": true,
+			"disableEdit": true
+		},
+		"semantics": {
+			"fireInitialTransitions": true
+		}
+	}
+}'>
+
+???
+
+---
+
+# Relaxing Actions and Expressions
+
+* They may be non-executable
+* All guards may be considered true
+
+<!--
+DONE:
+* add historyCauses so that we do not start from nothing (for "wow effect")
+* hid all interface elements for "wow effect"
+		"transition:lamp.tONOFF"
+-->
+
+<iframe id="ex1" width="120%" height="480" src='../AnimUML.html#{
+	"name": "Test",
+	"stateByName": {
+		"init": {"kind": "initial"}
+	},
+	"historyCauses": [
+		"transition:lamp.tOFFON",
+		"transition:lamp.T1"
+	],
+	"settings": {
+		"display": {
+		},
+		"interface": {
+			"iframe": "ex1",
+			"load": "LampWithDisablableTimer",
+			"disableExperimental": true,
+			"disableModelSelection": true,
+			"disableObjectSelection": true,
+			"disableDoc": true,
+			"disableExports": true,
+			"disableHistorySettings": true,
+			"disableReset": true,
+			"disableSwitchDiagram": true,
+			"disableSettings": true,
+			"disableInteractionSelection": true,
+			"disableEdit": true
+		},
+		"semantics": {
+			"fireInitialTransitions": true
+		}
+	}
+}'>
+
+???
+
+
+
+
+---
+
+# Relaxing Inter-object Communication
+
+* Messages may transit through the *ether* instead of via event pools
+
+<!--
+	style="transform: scale(0.75) translate(-100);"
+	width="125%"
+	height="480"
+	style="transform: translate(-100,0) scale(0.75);"
+-->
+<iframe	id="ex3"
+	style="transform: scale(0.85); transform-origin: 0 0;"
+	width="120%"
+	height="580"
+	src='../AnimUML.html#{
+	"name": "Test",
+	"stateByName": {
+		"init": {"kind": "initial"}
+	},
+	"historyCauses": [
+		"transition:button.T1",
+		"transition:lamp.tOFFON"
+	],
+	"settings": {
+		"display": {
+			"showEventPools": false,
+			"hideClasses": true
+		},
+		"interface": {
+			"iframe": "ex3",
+			"load": "ButtonLamp",
+			"disableExperimental": true,
+			"disableModelSelection": true,
+			"disableObjectSelection": true,
+			"disableDoc": true,
+			"disableExports": true,
+			"disableSwitchDiagram": true,
+			"disableHistorySettings": true,
+			"disableReset": true,
+			"disableSettings": true,
+			"historyType": "sequence",
+			"disableInteractionSelection": true,
+			"disableEdit": true
+		},
+		"semantics": {
+			"fireInitialTransitions": true
+		}
+	}
+}'>
+
+???
+
+Shortcuts:
+* s: TCSVG sequence diagram
+* p: PlantUML sequence diagram
+* t: PlantUML timing diagram
+
+---
+exclude: true
+
+# Event Pools can be Used in Later Iterations
+
+<!--
+	style="transform: scale(0.75) translate(-100);"
+	width="125%"
+	height="480"
+	style="transform: translate(-100,0) scale(0.75);"
+-->
+<iframe	id="ex3"
+	style="transform: scale(0.85); transform-origin: 0 0;"
+	width="120%"
+	height="580"
+	src='../AnimUML.html#{
+	"name": "Test",
+	"stateByName": {
+		"init": {"kind": "initial"}
+	},
+	"historyCauses": [
+		"transition:button.T1"
+	],
+	"settings": {
+		"display": {
+			"hideClasses": true
+		},
+		"interface": {
+			"iframe": "ex3",
+			"load": "ButtonLamp",
+			"disableExperimental": true,
+			"disableModelSelection": true,
+			"disableObjectSelection": true,
+			"disableDoc": true,
+			"disableSettings": true,
+			"disableEdit": true
+		},
+		"semantics": {
+			"fireInitialTransitions": true
+		},
+		"overrides": {
+			"objects.button.transitionByName.T1.effect": "lamp.onButton()",
+			"objects.button.transitionByName.T2.effect": "lamp.offButton()"
+		}
+	}
+}'>
+---
+
+# More Features: Methods & Available State Machine Actions
+
+<!--
+<iframe id="ex4" width="100%" height="480" src='../AnimUML.html#{
+	"name": "Test",
+	"stateByName": {
+		"init": {"kind": "initial"}
+	},
+	"settings": {
+		"display": {
+			"showEventPools": false,
+			"showMethodsAsActivities": false,
+			"hideStateMachines": true
+		},
+		"interface": {
+			"iframe": "ex4",
+			"load": "ButtonLampBulb",
+			"disableExperimental": true,
+			"disableModelSelection": true,
+			"disableObjectSelection": true,
+			"disableDoc": true,
+			"disableSettings": true,
+			"disableEdit": true,
+			"historyType": "sequence"
+		},
+		"semantics": {
+			"fireInitialTransitions": true
+		}
+	}
+}'>
+-->
+
+<iframe id="ex6" width="100%" height="480" src='../AnimUML.html#{
+	"name": "Test",
+	"stateByName": {
+		"init": {"kind": "initial"}
+	},
+	"settings": {
+		"display": {
+			"hideStateMachines": true
+		},
+		"interface": {
+			"iframe": "ex6",
+			"load": "ButtonLampBulbWithMethods",
+			"disableExperimental": true,
+			"disableModelSelection": true,
+			"disableObjectSelection": true,
+			"disableDoc": true,
+			"disableExports": true,
+			"disableReset": true,
+			"disableSwitchDiagram": true,
+			"disableHistorySettings": true,
+			"disableSettings": true,
+			"disableEdit": true,
+			"disableInteractionSelection": true,
+			"historyType": "sequence"
+		},
+		"semantics": {
+			"fireInitialTransitions": true
+		},
+		"overrides": {
+			"objects.bulb.operationByName.turnOn.method": "alert(\"Bulb is now on!\")",
+			"objects.bulb.operationByName.turnOff.method": "alert(\"Bulb is now off!\")"
+		}
+	}
+}'>
+
+???
+
+Explain here that the slides use the prototype implementation
+
+---
+
+# Advanced Usage Example: Verification
+
+<!--
+	style="transform: scale(0.75) translate(-100);"
+	width="125%"
+	height="480"
+	style="transform: translate(-100,0) scale(0.75);"
+-->
+<iframe	id="ex5"
+	style="transform: scale(0.85); transform-origin: 0 0;"
+	width="120%"
+	height="580"
+	src='../AnimUML.html#{
+	"name": "Test",
+	"stateByName": {
+		"init": {"kind": "initial"}
+	},
+	"settings": {
+		"display": {
+			"showEventPools": false,
+			"hideClasses": true
+		},
+		"interface": {
+			"iframe": "ex5",
+			"load": "ButtonLamp",
+			"disableExperimental": true,
+			"disableSettings": false,
+			"disableEdit": false
+		},
+		"semantics": {
+			"fireInitialTransitions": true
+		}
+	}
+}'>
+
+<!--
+			"checkEvents": true,
+			"keepOneMessagePerTrigger": true,
+-->
+
+---
+
+# Tool Support
+
+* Approach implemented as a web application
+	* https://github.com/fjouault/AnimUML
+		* Includes a link to a public server to try without installing
+--
+count: false
+* Usable to create interactive documents
+	* Including interactive slide decks like this very presentation
+--
+count: false
+* Some features
+	* Share model by link (with or without current execution trace)
+	* Export diagrams (e.g., as PlantUML code, SVG)
+	* Generate code
+		* To tUML, which can be imported into Eclipse UML (notably for use in Papyrus)
+		* To other languages (work in progress)
+	* Import from Eclipse UML
+	* Analyse models directly in-browser
+	* Connect to more powerful remote analysis engines (http://www.obpcdl.org/)
+	* Connect to remote execution engines (http://www.obpcdl.org/bare-metal-uml/)
+	* Node.js compatible (e.g., to create command line tools)
+
+<!--
+which makes the following features available from the command line
+		* Generating code generators
+		* Running tests or verifications from command line
+	* Possibility to reuse a single model accross several figures
+		* Each figure can have different settings
+	* Possibility to model-check from the document
+		TODO: e.g., is interaction as spec consistent with state machines?
+-->
+
+---
+exclude: true
+
+# Supported Kinds of Analysis
+
+* Bisimulation
+	* Notably to verify that two execution engines are equivalent (for a given model)
+
+---
+exclude: true
+
+# Approach Perspectives
+
+* Inferring some of the missing parts
+	* Classes from instances
+	* State machines from sequence diagrams
+* Larger UML subset
+* More semantic relaxation options
+* Code generation
+* Verification
+	* Verifying a system against interaction (e.g., sequence diagrams) specifications
+* Some challenges
+	* Multiple semantic variation points
+		* From the UML specification
+		* Because of relaxation
+	* What about their relative consistency?
+		* Within a given project, ideally removing relaxation points should not completely change the semantics
+			* Relaxed models should have a superset of behaviors?
+
+---
+exclude: true
+
+# Tool Perspectives
+
+* Improved user interface
+* Synchronous calls from transition effects
+* Current limitations
+	* Only asynchronous operation calls from state machine are supported
+
+---
+class: bigger
+
+# Conclusion
+
+* AnimUML: a tool-supported approach for early model execution
+	* Model animation, testing, verification
+--
+count: false
+* Animating models is actually useful to discover inconsistencies, or missing elements
+--
+count: false
+* Some possible perspectives
+	* Semi-automatic inference of a model's missing parts
+--
+count: false
+	* Application to teaching
+		* Teachers can create interactive AnimUML tutorials
+		* Students can play with models (modify, execute, repeat)
+			* To gain insight into notation and semantics
+		* (Semi-)automatic grading with analysis tool?
+--
+count: false
+	* Application to SysML v2?
+
+---
+
+# Questions?
+
+
+</iframe>
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+          ratio: '16:9',
+      });
+    </script>
+  </body>
+</html>
+

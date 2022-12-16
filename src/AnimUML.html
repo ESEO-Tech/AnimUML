@@ -1,0 +1,405 @@
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<style>
+			body {
+				overflow: hidden;
+			}
+			.dark-mode {
+				color: white;
+				background-color: #121212;
+			}
+			.dark-mode a {
+				color: orange;
+			}
+			.diag {
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				height: 100vh;
+			}
+			#mainDiag {
+				width: 55%;
+			}
+			#seqDiag {
+				right: 0;
+				width: 45%;
+			}
+			.fig {
+				overflow: auto;
+				flex: 1 1 auto;
+			}
+			.aexperimental {
+				display: none !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="diag" id="mainDiag">
+			<div id="mainDiagSettings"
+				style="overflow: auto; flex: 0 .1 auto;"
+			>
+				<div style="display: block;">
+					<div id="modelSelection" style="display: inline;">Select model: <select id="exampleSelect"></select>.</div>
+					<div id="objectSelection" style="display: none;">Select object: <select id="objectSelect"></select>.</div>
+				</div>
+				<div style="display: block;">
+					<div id="docButton" style="display: inline"><a href="doc/doc.html" target="_blank">Doc</a>.</div>
+					<div id="settingsButtons" style="display: inline">Open settings:
+					<a href="javascript:toggle(displayDiv, 'inline')">display</a><div id="displayDiv"
+						style="display: none"
+						style="display: inline"
+					>:
+						<ul>
+							<li><input id="hideLinks" type="checkbox"> show hyperlinks as normal text</li>
+							<li><input id="showPorts" type="checkbox"> show port objects</li>
+							<li><a href="javascript:toggle(displayedObjectSelection2, 'inline')">Displayed objects selection</a><div id="displayedObjectSelection2" style="display: none;"> (<a href="javascript:selectDisplayedObjects(true)">all</a>, <a href="javascript:selectDisplayedObjects(false)">none</a>)
+								<ul id="displayedObjectSelection">
+								</ul></div>
+							</li>
+							<li><a href="javascript:toggle(structuralDiagramSettings)">Strucural diagram</a>
+								<ul id="structuralDiagramSettings" style="display: none;">
+									<li><input id="hideClasses" type="checkbox"> hide objects</li>
+									<li><input id="showActorsAsObjects" type="checkbox"> show actors as objects (e.g., to see property values and event pool contents)</li>
+									<li><input id="showEventPools" type="checkbox" checked> show event pool and ether messages on objects</li>
+									<li><input id="hideOperations" type="checkbox"> hide operations</li>
+									<li><input id="hideMethods" type="checkbox"> hide methods</li>
+									<li><input id="showEndNames" type="checkbox"> show connector end names when available</li>
+									<li><input id="showClassDiagram" type="checkbox"> show class diagram</li>
+									<li><input id="showMethodsAsActivities" type="checkbox" checked> show methods as activities</li>
+								</ul>
+							</li>
+							<li><a href="javascript:toggle(stateDiagramSettings)">State diagram</a>
+								<ul id="stateDiagramSettings" style="display: none;">
+									<li><input id="hideStateMachines" type="checkbox"> hide state machines</li>
+									<li><input id="hideOuterSMBoxes" type="checkbox"> hide frame with object name around state machines</li>
+									<li><input id="showSelfTransitionsAsInternal" type="checkbox"> show transitions to same state as internal (warning: this may be ambiguous, for instance if there are time triggers ("after") or entry or exit actions)</li>
+									<li><input id="narrow" type="checkbox"> display transition labels as narrowly as possible</li>
+									<li><input id="showExplicitSM" type="checkbox"> show explicit state machines (work in progress: notably no support for 'do', 'when', non-trivial history)</li>
+								</ul>
+							</li>
+							<li><a href="javascript:toggle(commentSettings)">Comments</a>
+								<div id="commentSettings" style="display: none;">
+									<ul>
+										<li><input id="showComments" type="checkbox" checked> enable comments</li>
+										<li>place class &amp; object comments to the <select id="objectCommentLocation" type="checkbox">
+											<option>left</option>
+											<option>top</option>
+											<option>right</option>
+											<option>bottom</option>
+											<option>do not show them</option>
+										</select></li>
+										<li>place operation comments to the <select id="operationCommentLocation" type="checkbox">
+											<option>left</option>
+											<option>right</option>
+											<option>do not show them</option>
+										</select></li>
+										<li>place property comments to the <select id="propertyCommentLocation" type="checkbox">
+											<option>left</option>
+											<option>right</option>
+											<option>do not show them</option>
+										</select></li>
+										<li>place state comments to the <select id="stateCommentLocation" type="checkbox">
+											<option>left</option>
+											<option>top</option>
+											<option>right</option>
+											<option>bottom</option>
+											<option>do not show them</option>
+										</select></li>
+										<li>place transition state comments to the <select id="transitionCommentLocation" type="checkbox">
+											<option>bottom</option>
+											<option>left</option>
+											<option>top</option>
+											<option>right</option>
+											<option>do not show them</option>
+										</select></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="javascript:toggle(historyDisplaySettings)">History/trace interaction diagram</a>
+								<ul id="historyDisplaySettings" style="display: none;">
+									<li><input id="hideStates" type="checkbox"> hide state invariants</li>
+									<li><input id="showPseudostateInvariants" type="checkbox"> show pseudostates as state invariants</li>
+									<li><input id="hideSets" type="checkbox"> hide <em>set/assignment</em> pseudo-messages</li>
+									<li><input id="showTransitions" type="checkbox"> show transition notes, with values of watch expressions after the transition, and previous configuration in tooltip</li>
+								</ul>
+							</li>
+						</ul>
+					</div>,
+					<a href="javascript:toggle(semanticsDiv, 'inline')">semantics</a><div id="semanticsDiv"
+						style="display: none"
+						style="display: inline"
+					>:
+						<ul>
+							<li><input id="fireInitialTransitions" type="checkbox"> automatically fire initial transitions</li>
+							<li><input id="autoFireAfterChoice" type="checkbox"> automatically fire outgoing transition of choice (only when exploring as of now)</li>
+							<li><input id="autoReceiveDisabled" type="checkbox"> operations (or communication diagram messages) are not automatically received</li>
+							<li><input id="considerGuardsTrue" type="checkbox"> consider all guards as true</li>
+							<li><input id="checkEvents" type="checkbox" checked> transitions only fireable if trigger matches a sent event, and operations only callable if they match a sent event</li>
+							<li><input id="keepOneMessagePerTrigger" type="checkbox" checked> cap the number of messages in the Ether to one per distinct trigger (state space will likely be unbounded if unset)</li>
+							<li><input id="enableEventPools" type="checkbox" checked> use event pools for messages sent to specific objects, instead of using the ether</li>
+							<li><input id="matchFirst" type="checkbox" checked> only consider the first matching event of each event pool</li>
+							<li><input id="symbolicValues" type="checkbox"> treat undefined values as symbolic values instead of as 0 or false</li>
+							<li><input id="reactiveSystem" type="checkbox"> consider that the system is reactive (i.e., faster than the environment): all its fireable transitions (except those with an after trigger) must be fired before any environment transition</li>
+							<li class="experimental"><input id="synchronousCommunication" type="checkbox"> allow synchronous communication</li>
+							<li class="experimental"><input id="withDBM" type="checkbox"> enable time tracking with a <a href="https://en.wikipedia.org/wiki/Difference_bound_matrix">Difference Bound Matrix</a> (DBM)</li>
+						</ul>
+					</div>,
+					<a href="javascript:toggle(remoteEngineDiv, 'inline')">remote engine</a><div id="remoteEngineDiv"
+						style="display: none"
+						style="display: inline"
+					>:
+						<ul>
+							<li id="connectToEMI">Connect to the remote engine: <input id="emiURL" value="ws://127.0.0.1:8090/socket/emi/LevelCrossing"/><button id="emiOk">Ok</button>
+								<ul>
+									<li><input id="debugEMI" type="checkbox"/> log messages exchanged with EMI in console</li>
+									<li><input id="emiAnimation" type="checkbox"/> animate when using the EMI engine</li>
+									<li>Examples of compatible remote engines:
+										<ul>
+											<li>the EMI-UML model interpreter (<a href="http://www.obpcdl.org/bare-metal-uml/" target="_blank">more information</a>)</li>
+											<li>controllable generated code</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li id="disconnectFromEMILI" style="display: none">Connected to EMI model "<div style="display: inline" id="emiConnectedURL"></div>" (<a href="javascript:disconnectFromEMI()">disconnect)</a>
+								<ul id="emiFireables">
+								</ul>
+							</li>
+						</ul>
+					</div>,
+					<a href="javascript:toggle(toolDiv, 'inline')">analysis tools</a><div id="toolDiv"
+						style="display: none"
+						style="display: inline"
+					>:
+						<ul>
+							<li><a href="javascript:toggle(staticAnalysis, 'inline')">Static analysis</a>
+								<div id="staticAnalysis" style="display: none;">
+									(<a href="javascript:autoFix(currentModel); updateIssues(currentModel); updateFig();">auto-fix</a>)
+									<div id="staticAnalysisResults">
+									</div>
+								</div>
+							</li>
+							<li><a href="javascript:toggle(watchExpressionsEditor, 'inline')">Watch expressions</a>
+								<div id="watchExpressionsEditor" style="display: none;">
+									(click on name or expression to edit,
+										<a href="javascript:(function () {atoms.innerHTML += `<tr><td contenteditable style='font-weight: bold;'>name</td><td contenteditable>expression</td><td></td><td>↕</td></tr>`;updateAtomSelects()})()">add an expression</a>, or clear name to delete):
+									<style>
+										#atoms td {
+											padding: 10px;
+										}
+									</style>
+									<table border="1" style="border-collapse: collapse;">
+										<thead>
+											<th>Name</th><th>Expression</th><th>Current value</th>
+										</thead>
+										<tbody id="atoms">
+										</tbody>
+									</table>
+								</div>
+							</li>
+							<li><a href="javascript:toggle(propertiesEditor, 'inline')">LTL properties</a>
+								<div id="propertiesEditor" style="display: none;">
+									(click name or expression to edit,
+										<a href="javascript:(function () {properties.innerHTML += `<tr><td contenteditable style='font-weight: bold;'>name</td><td contenteditable>expression</td><td>↕</td></tr>`;updatePropertySelects()})()">add a property</a>, or clear name to delete, <a href="javascript:showBuchiAutomata()">show/hide automata</a>):
+									<style>
+										#properties td {
+											padding: 10px;
+										}
+									</style>
+									<table border="1" style="border-collapse: collapse;">
+										<thead>
+											<th>Name</th><th>Expression</th>
+										</thead>
+										<tbody id="properties">
+										</tbody>
+									</table>
+									Remark: atomic propositions in LTL properties can either be watch expression names, or inline expressions surrounded by pipe characters ('|').
+								</div>
+							</li>
+							<li><a href="javascript:toggle(inBrowserAnalysis)">In-browser analysis</a>
+								<div id="inBrowserAnalysis"
+									style="display: none;"
+									style="display: inline;"
+								>
+									<ul>
+										<li><div id="explorationsOutput">No output yet</div></li>
+										<li>Commands<ul>
+											<li><a href="javascript:exploreStateSpace()">Reset and explore state space</a></li>
+											<li><a href="javascript:exploreStateSpace(true)">Reset and explore state space until</a> <select class="atomSelect" id="resetExploreStopCondition"></select></li>
+											<li><a href="javascript:exploreStateSpace(true, true)">Explore state space from current state until</a> <select class="atomSelect" id="exploreStopCondition"></select></li>
+											<li class="experimental">
+												<a href="javascript:syncInteraction()">Synchronize with interaction</a>
+												<ul id="interFireables">
+												</ul>
+											</li>
+											<li class="experimental"><a href="javascript:checkInteraction()">Check that the model can reproduce the interaction</a></li>
+											<li><input id="withObservers" type="checkbox"/> enable observers.</li>
+											<li><input id="withBFS" type="checkbox" checked/> breadth-first instead of depth-first exploration.</li>
+											<li><input id="showHeatMap" type="checkbox"/> show heat map if available. Remarks: 1) the model must be explored at least partially first, and 2) transitions from pseudostates (e.g., initial, choice) may be erroneously shown as not fired because some execution engines do not notify AnimUML.</li>
+											<li>use watch expression value as configuration representation <select class="optionalAtomSelect" id="exploreCanonizer"></select> (leave blank to use actual configuration)</li>
+											<li><input id="useZ2mc" type="checkbox" checked onchange="javascript:stepBreakpointLI.style.display = event.srcElement.checked ? 'block' : 'none'"/> use the <a target="_blank" href="https://github.com/teodorov/z2mc-javascript">z2mc analysis tool</a> instead of the legacy AnimUML one (warning: not compatible with external engines yet)</li>
+											<li id="stepBreakpointLI"><input id="stepBreakpoint" type="checkbox"/> evaluate breakpoints on execution steps (source configuration, transition, target configuration) instead of on a single configuration</li>
+											<li><a href="javascript:stopExploration()">STOP</a></li>
+										</ul></li>
+									</ul>
+								</div>
+							</li>
+							<li id="connectToToolLI"><a href="javascript:toggle(externalAnalysis, 'inline')">Connect to external analysis tool</a><div id="externalAnalysis" style="display: none;">: <input id="toolURL" value="ws://127.0.0.1:8090/socket/obp2"/><button id="toolOk">Ok</button>
+									<ul>
+										<li>Wait <input id="toolDelay" value="0"/> milliseconds before sending configuration or fireable transitions</li>
+										<li><input id="toolAnimation" type="checkbox"/> animate when driven by analysis tool</li>
+										<li><input id="debugAnalysis" type="checkbox"/> log messages exchanged with analysis tool in console</li>
+										<li><input id="keepSysHistory" type="checkbox"/> keep exchanged messages in sequence &amp; timing diagrams when setting configurations (warning: may make these diagrams inconsistent)</li>
+									</ul>
+								</div>
+							</li>
+							<li id="disconnectFromToolLI" style="display: none"><a href="javascript:disconnectFromTool()">Disconnect from analysis tool</a>
+								<ul>
+									<li><div id="analysisOutput"/></li>
+									<li><div id="analysisCommands"/></li>
+								</ul>
+							</li>
+						</ul>
+					</div>,
+					<a href="javascript:toggle(exportDiv, 'inline')">export</a><div id="exportDiv"
+						style="display: none"
+						style="display: inline"
+					>:
+						<ul id="modelExports">
+							<!-- DO NOT COMMIT THE FOLLOWING <li> -->
+							<li>set link target server:
+								<select id="linkTargetServer">
+									<option>/</option>
+								</select>
+							</li>
+							<li>model without history
+								<ul>
+									<li>download as an <a id="exportHTML" target="_blank" href="#clickLinkToUpdateIt">HTML file</a> for easy edition</li>
+									<li>open as a sharable <a id="export" target="_blank" href="#clickLinkToUpdateIt">AnimUML link</a></li>
+									<li>download as a pretty-printed <a id="exportPretty" target="_blank" href="#clickLinkToUpdateIt">JSON file</a></li>
+								</ul>
+							</li>
+							<li>model with history<div id="historyExports"></div>
+								<ul>
+									<li>download as an <a id="histExportHTML" target="_blank" href="#clickLinkToUpdateIt">HTML file</a> for easy edition</li>
+									<li>open as a sharable <a id="histExport" target="_blank" href="#clickLinkToUpdateIt">AnimUML link</a></li>
+									<li>download as a pretty-printed <a id="histExportPretty" target="_blank" href="#clickLinkToUpdateIt">JSON file</a></li>
+								</ul>
+							</li>
+							<li>download as a <a id="tUMLExport" target="_blank" href="#clickLinkToUpdateIt">tUML file</a></li>
+							<li>open <a id="statePlantUML" target="_blank" href="#clickLinkToUpdateIt">main</a> or <a id="seqPlantUML" target="_blank" href="#clickLinkToUpdateIt">interaction</a> diagram as a PlantUML textual diagram (or download as SVG if not a PlantUML diagram)
+								<ul class="experimental">
+									<li><input id="plantUMLType" type="checkbox">with annotations</input></li>
+									<li id="forAnimationDiv" style="display: none"><input id="forAnimation" type="checkbox">for animation</input></li>
+								</ul>
+							</li>
+							<li>download the displayed <a id="mainPNG" href="#">main</a> or <a id="seqPNG" href="#">interaction</a> diagram as a PNG file
+							</li>
+						</ul>
+					</div><div class="experimental" style="display: inline;">,
+					<a href="javascript:toggle(generateDiv, 'inline')">generate</a><div id="generateDiv"
+						style="display: none"
+						style="display: inline"
+					>:
+						<ul>
+							<li class="experimental">download as a <a id="cExport" target="_blank" href="#clickLinkToUpdateIt">C code tgz file</a></li>
+							<li class="experimental">download as a <a id="ceptreExport" target="_blank" href="#clickLinkToUpdateIt">ceptre source file</a></li>
+						</ul>
+					</div></div>.</div>
+					<div id="editButton" style="display: inline"><a href="javascript:edit()">Edit</a><div id="editBlock" style="display: none">
+					</div>.</div>
+				</div>
+			</div>
+			<div class="fig">
+				<object id="stateFigo">
+				</object>
+			</div>
+			<object id="stateFigoPreload" width="0" height="0">
+			</object>
+			<object id="seqFigoPreload" width="0" height="0">
+			</object>
+		</div>
+		<div class="diag" id="seqDiag">
+			<div style="">
+				<script>
+					function switchDiagramsLeft() {
+						if(mainDiag.style.width !== "") {
+							seqDiag.style  = '';
+							mainDiag.style  = '';
+							show(switchRight);
+						} else {
+							seqDiag.style  = 'left: 0; width: 100%;';
+							mainDiag.style = 'display: none';
+							hide(switchLeft);
+						}
+					}
+					function switchDiagramsRight() {
+						if(mainDiag.clientWidth) {
+							seqDiag.style.width  = '1em';
+							mainDiag.style = 'width: calc(100% - 1em)';
+							hide(switchRight);
+						} else {
+							//seqDiag.style  = 'width: 45%; float: right;'
+							//mainDiag.style  = 'width: 55%; float: left;'
+							seqDiag.style  = '';
+							mainDiag.style  = '';
+							show(switchLeft);
+						}
+					}
+				</script>
+				<span a id="switchDiagram">
+					<a id="switchLeft" href="javascript:switchDiagramsLeft()">←</a>
+					<a id="switchRight" href="javascript:switchDiagramsRight()">→</a>
+				</span>
+				<div id="interactionSelection" style="display: inline">Select interaction: <select id="interactionSelect"></select>.</div>
+				<a id="resetButton" href="javascript:reset()">Reset</a>
+				<div id="historySettings" style="display: inline;">
+					<div id="historySpecificSettings" style="display: inline;">
+						Show history as a:
+						<select id="historyType">
+							<option>TCSVG sequence</option>
+							<option>sequence</option>
+							<option>timing</option>
+						</select>
+					</div>
+					<div id="interactionSettings" style="display: none;">
+						Showing interaction
+					</div>
+					diagram
+					<div id="timingScaleDiv" style="display: inline;">
+						with adjustable scale:
+						<input id="timingScale" type="range" min="20" max="500" value="20"/>
+					</div>
+				</div>
+			</div>
+			<div class="fig">
+				<object id="seqFigo">
+				</object>
+				<p id="seqFigs"/>
+			</div>
+			</div>
+		</div>
+		<script src="samples/Lamp.js" charset="UTF-8"></script>
+		<script src="samples/LampWithDisablableTimer.js" charset="UTF-8"></script>
+		<script src="samples/ButtonLamp.js" charset="UTF-8"></script>
+		<script src="samples/ButtonLampExplicitTargets.js" charset="UTF-8"></script>
+		<script src="samples/ButtonLampBulb.js" charset="UTF-8"></script>
+		<script src="samples/ButtonLampBulbExplicitTargets.js" charset="UTF-8"></script>
+		<script src="samples/ButtonLampBulbWithMethods.js" charset="UTF-8"></script>
+		<script src="samples/SimpleCruiseControl.js" charset="UTF-8"></script>
+		<script src="samples/LevelCrossing.js" charset="UTF-8"></script>
+		<script src="samples/RobotModel.js" charset="UTF-8"></script>
+		<script src="samples/Bridge.js" charset="UTF-8"></script>
+		<script src="samples/BridgeWithExplicitDBM.js" charset="UTF-8"></script>
+		<script src="samples/AnimUMLEngine.js" charset="UTF-8"></script>
+		<script src="samples/SynchronousCommunicationExample.js" charset="UTF-8"></script>
+		<script src="samples/ShallowHistoryTest.js" charset="UTF-8"></script>
+		<script src="test/samples/WarningTest/ButtonLampBulbWarningTest.js" charset="UTF-8"></script>
+		<script src="test/samples/WarningTest/WarningTest.js" charset="UTF-8"></script>
+
+		<script src="ContextualEval.js"></script>
+
+		<script src="samples/EMI/EMISamples.js"></script>
+	</body>
+</html>

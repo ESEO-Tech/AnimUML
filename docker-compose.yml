@@ -5,15 +5,16 @@ services:
         image: traefik:v2.2
         command: --providers.docker
         ports:
-            - 8083:80
+            - 80:80
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
 
     plantuml:
-        image: registry.kher.nl/tlc/plantuml-server:local
+        image: registry.kher.nl/tlc/plantuml-server:URLWorking
         restart: always
         environment:
             PLANTUML_JAVASCRIPT_UNSECURE: 'true'
+            BASE_URL: plantuml
         labels:
             - "traefik.http.routers.uml.rule=PathPrefix(`/plantuml`)"
 
@@ -21,9 +22,14 @@ services:
         image: 'nginx'
         restart: always
         volumes:
-            - ./public:/usr/share/nginx/html:ro
+            - ./src:/usr/share/nginx/html:ro
         labels:
             - "traefik.http.routers.nginx.rule=PathPrefix(`/`)"
-            - "traefik.http.middlewares.cors.headers.accessControlAllowOriginList=*"
-            - "traefik.http.routers.nginx.middlewares=cors"
+        
+        
+    spot:
+        image: gitlab-registry.lre.epita.fr/spot/spot-web
+        restart: always
+        labels:
+            - "traefik.http.routers.spot.rule=PathPrefix(`/api`)"
 

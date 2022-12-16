@@ -1,0 +1,8 @@
+.*.swp
+.swo
+.swp
+
+/src/xunit.xml
+/src/test-results.xml
+
+/src/coverage/
