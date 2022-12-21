@@ -6,7 +6,13 @@ You can also try the latest AnimUML version (v20221216) without downloading or i
 Note that this server does not host any remote engine or external tool.
 Other AnimUML versions are listed on the [Deployed Installations](https://github.com/ESEO-Tech/AnimUML/wiki/Deployed-Installations) wiki page.
 
-AnimUML has been presented ([interactive slides](https://animuml.kher.nl/slides/MODELS2020.html)) in the following research paper:
+AnimUML has been presented at MODELS 2020 ([interactive slides](https://animuml.kher.nl/slides/MODELS2020.html)):
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=7pzbaWWFpcM"><img width="70%" alt="AnimUML MODELS 2020 presentation video thumbnail" src="https://user-images.githubusercontent.com/10452457/208882911-12b4d87e-f770-4619-ba6a-12a693eee5b8.png"/></a>
+</p>
+
+And here is the corresponding [research paper](https://doi.org/10.1145/3365438.3410967):
 ```bibtex
 @inproceedings{AnimUML,
 	title = {{Designing, Animating, and Verifying Partial UML Models}},
